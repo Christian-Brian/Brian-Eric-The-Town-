@@ -6,7 +6,7 @@
 
 package the.town;
 
-import cit260.thetown.Player;
+import citbyui.cit260.thetown.model.Player;
 
 /**
  *

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package cit260.thetown;
+package citbyui.cit260.thetown.model;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -13,23 +13,23 @@ import java.util.Objects;
  *
  * @author Eric
  */
-public class Scene implements Serializable{
+public class Worlds implements Serializable{
+    private String name;
     private String description;
-    private String resourceType;
 
-    public Scene() {
+    public Worlds() {
     }
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", resourceType=" + resourceType + '}';
+        return "Worlds{" + "name=" + name + ", description=" + description + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
+        int hash = 5;
+        hash = 23 * hash + Objects.hashCode(this.name);
         hash = 23 * hash + Objects.hashCode(this.description);
-        hash = 23 * hash + Objects.hashCode(this.resourceType);
         return hash;
     }
 
@@ -41,17 +41,25 @@ public class Scene implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Scene other = (Scene) obj;
-        if (!Objects.equals(this.description, other.description)) {
+        final Worlds other = (Worlds) obj;
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.resourceType, other.resourceType)) {
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         return true;
     }
     
     
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getDescription() {
         return description;
@@ -60,13 +68,4 @@ public class Scene implements Serializable{
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public String getResourceType() {
-        return resourceType;
-    }
-
-    public void setResourceType(String resourceType) {
-        this.resourceType = resourceType;
-    }
-    
 }

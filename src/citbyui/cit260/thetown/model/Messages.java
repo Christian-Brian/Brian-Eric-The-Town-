@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package cit260.thetown;
+package citbyui.cit260.thetown.model;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -13,23 +13,23 @@ import java.util.Objects;
  *
  * @author Eric
  */
-public class Player implements Serializable{
+public class Messages implements Serializable{
     
-    //class instance variable
-    private String name;
+    //class instance variables
+    private String hint;
 
-    public Player() {
+    public Messages() {
     }
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + '}';
+        return "Messages{" + "hint=" + hint + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 89 * hash + Objects.hashCode(this.name);
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.hint);
         return hash;
     }
 
@@ -41,8 +41,8 @@ public class Player implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Player other = (Player) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        final Messages other = (Messages) obj;
+        if (!Objects.equals(this.hint, other.hint)) {
             return false;
         }
         return true;
@@ -50,12 +50,11 @@ public class Player implements Serializable{
     
     
 
-    public String getName() {
-        return name;
+    public String getHint() {
+        return hint;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setHint(String hint) {
+        this.hint = hint;
     }
-    
 }

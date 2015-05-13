@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cit260.thetown;
+
+package citbyui.cit260.thetown.model;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -12,25 +13,23 @@ import java.util.Objects;
  *
  * @author Eric
  */
-public class Characters implements Serializable{
-   
-    //class instance variables
-    private String name;
+public class Scene implements Serializable{
     private String description;
+    private String resourceType;
 
-    public Characters() {
+    public Scene() {
     }
 
     @Override
     public String toString() {
-        return "Characters{" + "name=" + name + ", description=" + description + '}';
+        return "Scene{" + "description=" + description + ", resourceType=" + resourceType + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.name);
-        hash = 53 * hash + Objects.hashCode(this.description);
+        hash = 23 * hash + Objects.hashCode(this.description);
+        hash = 23 * hash + Objects.hashCode(this.resourceType);
         return hash;
     }
 
@@ -42,25 +41,17 @@ public class Characters implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Characters other = (Characters) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        final Scene other = (Scene) obj;
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.description, other.description)) {
+        if (!Objects.equals(this.resourceType, other.resourceType)) {
             return false;
         }
         return true;
     }
     
     
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getDescription() {
         return description;
@@ -69,4 +60,13 @@ public class Characters implements Serializable{
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String getResourceType() {
+        return resourceType;
+    }
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+    
 }

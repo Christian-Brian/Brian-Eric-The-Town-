@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package cit260.thetown;
+package citbyui.cit260.thetown.model;
 
 import java.io.Serializable;
 import java.util.Objects;

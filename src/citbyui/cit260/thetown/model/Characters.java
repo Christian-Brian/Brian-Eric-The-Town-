@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-package cit260.thetown;
+package citbyui.cit260.thetown.model;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -13,23 +12,25 @@ import java.util.Objects;
  *
  * @author Eric
  */
-public class Worlds implements Serializable{
+public class Characters implements Serializable{
+   
+    //class instance variables
     private String name;
     private String description;
 
-    public Worlds() {
+    public Characters() {
     }
 
     @Override
     public String toString() {
-        return "Worlds{" + "name=" + name + ", description=" + description + '}';
+        return "Characters{" + "name=" + name + ", description=" + description + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 23 * hash + Objects.hashCode(this.name);
-        hash = 23 * hash + Objects.hashCode(this.description);
+        int hash = 7;
+        hash = 53 * hash + Objects.hashCode(this.name);
+        hash = 53 * hash + Objects.hashCode(this.description);
         return hash;
     }
 
@@ -41,7 +42,7 @@ public class Worlds implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Worlds other = (Worlds) obj;
+        final Characters other = (Characters) obj;
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
