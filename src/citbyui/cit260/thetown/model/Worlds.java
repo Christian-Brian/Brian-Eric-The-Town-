@@ -11,7 +11,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Eric
+ * @author Brian
  */
 public class Worlds implements Serializable{
     private String name;
