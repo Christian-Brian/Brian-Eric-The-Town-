@@ -37,16 +37,29 @@ public class TheTown {
         System.out.println(characterOne);
         System.out.println(description);
         
-        Game gameOne = new Game();
+        Game gameStartTime = new Game();
         
-        gameOne.setStartTime("12:00");
+        gameStartTime.setStartTime("12:00");
         
-        Double startTimeInfo = gameOne.Double();
-        System.out.println(gameOne);
+        Double startTimeInfo = gameStartTime.toDouble();
+        System.out.println(startTimeInfo);
         
-        Locations locationsOne = new Locations();
+        Locations locationOne = new Locations();
+        Locations restrictedAccess = new Locations();
+        Locations coordinants = new Locations();
         
-        locationsOne.setAmount("0/1");
+        locationOne.setAmount("0/1");
+        restrictedAccess.setrestrictedAccess("Your Path Is Blocked.");
+        coordinants.setCoordinants("A-6");
+                
+        Double amountInfo = locationOne.Double();
+        String restrictedAccessInfo = restrictedAccess.toString();
+        String coordinantsInfo = coordinants.toString();
+        System.out.println(amountInfo);
+        System.out.println(restrictedAccessInfo);
+        System.out.println(coordinantsInfo);
+        
+        
     }
     
     

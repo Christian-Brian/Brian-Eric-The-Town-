@@ -16,14 +16,14 @@ import java.util.Objects;
 public class Locations implements Serializable{
     private double amount;
     private String restrictedAccess;
-    private String cordinants;
+    private String coordinants;
 
     public Locations() {
     }
 
     @Override
     public String toString() {
-        return "Locations{" + "amount=" + amount + ", restrictedAccess=" + restrictedAccess + ", cordinants=" + cordinants + '}';
+        return "Locations{" + "amount=" + amount + ", restrictedAccess=" + restrictedAccess + ", coordinants=" + coordinants + '}';
     }
 
     @Override
@@ -31,7 +31,7 @@ public class Locations implements Serializable{
         int hash = 5;
         hash = 37 * hash + (int) (Double.doubleToLongBits(this.amount) ^ (Double.doubleToLongBits(this.amount) >>> 32));
         hash = 37 * hash + Objects.hashCode(this.restrictedAccess);
-        hash = 37 * hash + Objects.hashCode(this.cordinants);
+        hash = 37 * hash + Objects.hashCode(this.coordinants);
         return hash;
     }
 
@@ -50,7 +50,7 @@ public class Locations implements Serializable{
         if (!Objects.equals(this.restrictedAccess, other.restrictedAccess)) {
             return false;
         }
-        if (!Objects.equals(this.cordinants, other.cordinants)) {
+        if (!Objects.equals(this.coordinants, other.coordinants)) {
             return false;
         }
         return true;
@@ -75,11 +75,11 @@ public class Locations implements Serializable{
     }
 
     public String getCordinants() {
-        return cordinants;
+        return coordinants;
     }
 
     public void setCordinants(String cordinants) {
-        this.cordinants = cordinants;
+        this.coordinants = cordinants;
     }
     
 }
