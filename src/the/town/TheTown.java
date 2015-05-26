@@ -49,5 +49,17 @@ public class TheTown {
         locationsOne.setAmount("0/1");
     }
     
-    
+    {North sceneOne = new North();
+     South sceneTwo = new South();
+     West  sceneThree = new West();
+     East  sceneFour = new East();
+             
+     Scene description = new Scene();
+     Scene resourceType = new Scene();
+     
+     String descriptionInfo = descriptionOne.toString();
+     String resourceType = resourceType.toString();
+     System.out.println(description);
+     System.out.println(resourceType);
+    }
 }
