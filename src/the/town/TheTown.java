@@ -39,7 +39,7 @@ public class TheTown {
         
         Game gameStartTime = new Game();
         
-        gameStartTime.setStartTime("12:00");
+        gameStartTime.setStartTime("1200");
         
         Double startTimeInfo = gameStartTime.toDouble();
         System.out.println(startTimeInfo);
@@ -59,7 +59,16 @@ public class TheTown {
         System.out.println(restrictedAccessInfo);
         System.out.println(coordinantsInfo);
         
+        Map numberOfColumns = new Map();
+        Map numberOfRows = new Map();
         
+        numberOfColumns.setNumberOfColumns("25");
+        numberOfRows.setNumberOfRows("25");
+        
+        Double numberOfColumnsInfo = numberOfColumns.toDouble();
+        Double numberOfRowsInfo = numberOfRows.toDouble();
+        System.out.println(numberOfColumnsInfo);
+        System.out.println(numberOfRowsInfo);
     }
     
     
