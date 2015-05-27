@@ -6,8 +6,15 @@
 
 package the.town;
 
+import citbyui.cit260.thetown.model.Scene;
 import citbyui.cit260.thetown.model.Characters;
 import citbyui.cit260.thetown.model.Player;
+import citbyui.cit260.thetown.model.Worlds;
+import citbyui.cit260.thetown.model.Messages;
+import citbyui.cit260.thetown.model.Resources;
+import citbyui.cit260.thetown.model.Game;
+import citbyui.cit260.thetown.model.Locations;
+import citbyui.cit260.thetown.model.Map;
 
 /**
  *
@@ -69,19 +76,37 @@ public class TheTown {
         Double numberOfRowsInfo = numberOfRows.toDouble();
         System.out.println(numberOfColumnsInfo);
         System.out.println(numberOfRowsInfo);
+        
+        // brian
+        Scene mountain = new Scene();
+        mountain.setDescription("mountains far away");
+        mountain.setResourceType("resources to look for");
+     
+        String mountainInfo = mountain.toString();
+        System.out.println(mountainInfo);
+        
+        Worlds nameOne = new Worlds();
+        nameOne.setName("the name");
+        nameOne.setDescription("the description for worlds");
+        
+        String nameOneInfo = nameOne.toString();
+        System.out.println(nameOneInfo);
+        
+        Messages hint = new Messages();
+        hint.setHint("your hint");
+        
+        String hintInfo = hint.toString();
+        System.out.println(hintInfo);
+        
+        Resources res = new Resources();
+        res.setName("the name");
+        res.setType("the type");
+        res.setAmountOfGold(50.254);
+        
+        String resInfo = res.toString();
+        System.out.println(resInfo);
+     
     }
     
-    {North sceneOne = new North();
-     South sceneTwo = new South();
-     West  sceneThree = new West();
-     East  sceneFour = new East();
-             
-     Scene description = new Scene();
-     Scene resourceType = new Scene();
      
-     String descriptionInfo = descriptionOne.toString();
-     String resourceType = resourceType.toString();
-     System.out.println(description);
-     System.out.println(resourceType);
-    }
 }
