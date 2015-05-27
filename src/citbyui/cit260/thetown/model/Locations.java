@@ -74,11 +74,11 @@ public class Locations implements Serializable{
         this.restrictedAccess = restrictedAccess;
     }
 
-    public String getCordinants() {
+    public String getCoordinants() {
         return coordinants;
     }
 
-    public void setCordinants(String cordinants) {
+    public void setCoordinants(String cordinants) {
         this.coordinants = cordinants;
     }
     

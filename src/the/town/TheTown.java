@@ -46,20 +46,20 @@ public class TheTown {
         
         Game gameStartTime = new Game();
         
-        gameStartTime.setStartTime("1200");
+        gameStartTime.setStartTime(1200);
         
-        Double startTimeInfo = gameStartTime.toDouble();
+        String startTimeInfo = gameStartTime.toString();
         System.out.println(startTimeInfo);
         
-        Locations locationOne = new Locations();
+        Locations ammount = new Locations();
         Locations restrictedAccess = new Locations();
         Locations coordinants = new Locations();
         
-        locationOne.setAmount("0/1");
-        restrictedAccess.setrestrictedAccess("Your Path Is Blocked.");
+        ammount.setAmount(0/1);
+        restrictedAccess.setRestrictedAccess("Your Path Is Blocked.");
         coordinants.setCoordinants("A-6");
                 
-        Double amountInfo = locationOne.Double();
+        String amountInfo = ammount.toString();
         String restrictedAccessInfo = restrictedAccess.toString();
         String coordinantsInfo = coordinants.toString();
         System.out.println(amountInfo);
@@ -69,11 +69,11 @@ public class TheTown {
         Map numberOfColumns = new Map();
         Map numberOfRows = new Map();
         
-        numberOfColumns.setNumberOfColumns("25");
-        numberOfRows.setNumberOfRows("25");
+        numberOfColumns.setNumberOfColumns(25);
+        numberOfRows.setNumberOfRows(25);
         
-        Double numberOfColumnsInfo = numberOfColumns.toDouble();
-        Double numberOfRowsInfo = numberOfRows.toDouble();
+        String numberOfColumnsInfo = numberOfColumns.toString();
+        String numberOfRowsInfo = numberOfRows.toString();
         System.out.println(numberOfColumnsInfo);
         System.out.println(numberOfRowsInfo);
         
