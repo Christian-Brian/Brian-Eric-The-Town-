@@ -11,7 +11,7 @@ package citbyui.cit260.thetown.control;
  */
 public class WorldsControl {
     
-    private double calcVolumeOfCave(double topRadius, double midRadius, double height) {
+    public double calcVolumeOfCave(double topRadius, double midRadius, double height) {
         
         if (height < 1 || height > 150) {
             return -1;
@@ -29,18 +29,24 @@ public class WorldsControl {
             return -1;
         }
         
-        double radius = diameter / 2;
-        double volume = height * Math.PI * ((2 * Math.pow(radius, 2)) + Math.pow(radius, 2) / 3);
+        double volume = height * Math.PI * ((2 * Math.pow(topRadius, 2)) + Math.pow(midRadius, 2) / 3);
             return volume;
     }
     
-}
 
-    private double calcWaterTank(double areaOfBase, double height) {
+    private double calcWaterTank(double areaOfBase, double fillRate) {
 
-        if (base)
+        if (areaOfBase > 1100 || areaOfBase <1000) {
+            return -1;
+        }
+
+        if (fillRate > 1 || fillRate < 1) {
+            return -1;
+        }
         
+        double height = 10;
+            return height;
 
-
+    }
 
 }
