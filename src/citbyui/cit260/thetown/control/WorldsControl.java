@@ -7,7 +7,7 @@ package citbyui.cit260.thetown.control;
 
 /**
  *
- * @author Eric
+ * @author Eric and Brian
  */
 public class WorldsControl {
     
@@ -29,11 +29,11 @@ public class WorldsControl {
             return -1;
         }
         
-        double volume = height * Math.PI * ((2 * Math.pow(topRadius, 2)) + Math.pow(midRadius, 2) / 3);
+        double volume = height * Math.PI * ((2 * Math.pow(midRadius, 2) + Math.pow(topRadius, 2)) / 3);
             return volume;
     }
     
-
+// Eric
     private double calcWaterTank(double areaOfBase, double fillRate) {
 
         if (areaOfBase > 1100 || areaOfBase <1000) {
