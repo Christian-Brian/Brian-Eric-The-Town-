@@ -48,5 +48,21 @@ public class WorldsControl {
             return height;
 
     }
-
+// Brian
+    public double calcCaseCubeofABox (double height, double width , double length){
+    
+        if (height < 1 || height > 100)
+            return -1;
+                    
+        if (width < 1 || width > 100)
+            return -1;
+        
+        if (length < 1 || length > 100)
+            return -1;
+                    
+        double cubeFt=length*width*height/1728;
+        return cubeFt;
+    }
+    
+    
 }

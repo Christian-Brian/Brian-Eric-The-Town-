@@ -144,5 +144,132 @@ public class WorldsControlTest {
         
         
     }
+
+    /**
+     * Test of calcCaseCubeofABox method, of class WorldsControl.
+     */
+    // Brian Christian
+    @Test
+    public void testCalcCaseCubeofABox() {
+        System.out.println("calcCaseCubeofABox");
+        // test 1
+        System.out.println("\tTest case #1");
+        double height = 50.0;
+        double width = 50.0;
+        double length = 50.0;
+        WorldsControl instance = new WorldsControl();
+        double expResult = 72.33;
+        double result = instance.calcCaseCubeofABox(height, width, length);
+        assertEquals(expResult, result, 0.01);
+       
+        // test 2
+        System.out.println("\tTest case #2");
+        height = 0.0;
+        width = 50.0;
+        length = 50.0;
+        expResult = -1;
+        result = instance.calcCaseCubeofABox(height, width, length);
+        assertEquals(expResult, result, 0.0);
+        
+        // test 3
+        System.out.println("\tTest case #3");
+        height = 101.0;
+        width = 50.0;
+        length = 50.0;
+        expResult = -1;
+        result = instance.calcCaseCubeofABox(height, width, length);
+        assertEquals(expResult, result, 0.0);
+        
+        // test 4
+        System.out.println("\tTest case #4");
+        height = 50.0;
+        width = 0.0;
+        length = 50.0;
+        expResult = -1;
+        result = instance.calcCaseCubeofABox(height, width, length);
+        assertEquals(expResult, result, 0.0);
+        
+        // test 5
+        System.out.println("\tTest case #5");
+        height = 50.0;
+        width = 101.0;
+        length = 50.0;
+        expResult = -1;
+        result = instance.calcCaseCubeofABox(height, width, length);
+        assertEquals(expResult, result, 0.0);
+        
+        // test 6
+        System.out.println("\tTest case #6");
+        height = 50.0;
+        width = 50.0;
+        length = 0.0;
+        expResult = -1;
+        result = instance.calcCaseCubeofABox(height, width, length);
+        assertEquals(expResult, result, 0.0);
+        
+        // test 7
+        System.out.println("\tTest case #7");
+        height = 50.0;
+        width = 50.0;
+        length = 101.0;
+        expResult = -1;
+        result = instance.calcCaseCubeofABox(height, width, length);
+        assertEquals(expResult, result, 0.0);
+        
+        // test 8
+        System.out.println("\tTest case #8");
+        height = 10.0;
+        width = 50.0;
+        length = 50.0;
+        expResult = 14.46;
+        result = instance.calcCaseCubeofABox(height, width, length);
+        assertEquals(expResult, result, 0.01);
+        
+        // test 9
+        System.out.println("\tTest case #9");
+        height = 100.0;
+        width = 50.0;
+        length = 50.0;
+        expResult = 144.67;
+        result = instance.calcCaseCubeofABox(height, width, length);
+        assertEquals(expResult, result, 0.01);
+        
+        // test 10
+        System.out.println("\tTest case #10");
+        height = 50.0;
+        width = 100.0;
+        length = 50.0;
+        expResult = 144.67;
+        result = instance.calcCaseCubeofABox(height, width, length);
+        assertEquals(expResult, result, 0.01);
+        
+        // test 11
+        System.out.println("\tTest case #11");
+        height = 50.0;
+        width = 10.0;
+        length = 50.0;
+        expResult = 14.46;
+        result = instance.calcCaseCubeofABox(height, width, length);
+        assertEquals(expResult, result, 0.01);
+        
+        // test 12
+        System.out.println("\tTest case #12");
+        height = 50.0;
+        width = 50.0;
+        length = 100.0;
+        expResult = 144.67;
+        result = instance.calcCaseCubeofABox(height, width, length);
+        assertEquals(expResult, result, 0.01);
+        
+        // test 13
+        System.out.println("\tTest case #13");
+        height = 50.0;
+        width = 50.0;
+        length = 10.0;
+        expResult = 14.46;
+        result = instance.calcCaseCubeofABox(height, width, length);
+        assertEquals(expResult, result, 0.01);
+       
+    }
     
 }
