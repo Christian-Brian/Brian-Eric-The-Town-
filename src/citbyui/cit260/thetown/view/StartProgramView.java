@@ -5,10 +5,10 @@
  */
 package citbyui.cit260.thetown.view;
 
-/**
- *
- * @author Eric
- */
+import citbyui.cit260.thetown.control.ProgramControl;
+import citbyui.cit260.thetown.model.Player;
+import java.util.Scanner;
+
 public class StartProgramView {
     
     public StartProgramView() {
@@ -21,6 +21,12 @@ public class StartProgramView {
         
         //prompt the player to enter their name
         String playersName = this.getPlayersName();
+        
+        //create and save the player object
+        Player player = ProgramControl.createPlayer(playersName);
+        
+        //display a personalized welcome message
+        this.displayWelcomeMessage(player);
       
 }
 
@@ -70,6 +76,13 @@ public class StartProgramView {
                         break; //out of the repitition (exit)
                     }
                 
-    }
-    return playersName; //return the name
+                    return playersName; //return the name
+                }
+
+    private void displayWelcomeMessage(Player player) {
+        System.out.println("\n\n====================================");
+        System.out.println("\tWelcome to the game " + player.getName());
+        System.out.println("\tHave a good time.");
+        System.out.println("========================================");
+        
     }
