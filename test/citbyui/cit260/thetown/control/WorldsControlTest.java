@@ -271,5 +271,42 @@ public class WorldsControlTest {
         assertEquals(expResult, result, 0.01);
        
     }
+
+    /**
+     * Test of calcWaterTank method, of class WorldsControl.
+     */
+    @Test
+    public void testCalcWaterTank() {
+        System.out.println("calcWaterTank");
+        //test 1
+        System.out.println("\t test #1");
+        double areaOfBase = 100.0;
+        double fillRate = 10.0;
+        WorldsControl instance = new WorldsControl();
+        double expResult = 10.0;
+        double result = instance.calcWaterTank(areaOfBase, fillRate);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\t test #2");
+        areaOfBase = 1101.0;
+        fillRate = 1.0;
+        expResult = -1.0;
+        result = instance.calcWaterTank(areaOfBase, fillRate);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\t test #3");
+        areaOfBase = 1100.0;
+        fillRate = 3.0;
+        expResult = -1.0;
+        result = instance.calcWaterTank(areaOfBase, fillRate);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\t test #4");
+        areaOfBase = 1100.0;
+        fillRate = 0.0;
+        expResult = -1.0;
+        result = instance.calcWaterTank(areaOfBase, fillRate);
+        assertEquals(expResult, result, 0.0);
+    }
     
 }

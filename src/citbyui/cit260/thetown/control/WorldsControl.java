@@ -34,17 +34,18 @@ public class WorldsControl {
     }
     
 // Eric
-    private double calcWaterTank(double areaOfBase, double fillRate) {
+    public double calcWaterTank(double areaOfBase, double fillRate) {
 
-        if (areaOfBase > 1100 || areaOfBase <1000) {
+        if (areaOfBase > 101 || areaOfBase < 99) {
             return -1;
         }
 
-        if (fillRate > 1 || fillRate < 1) {
+        if (fillRate > 10 || fillRate < 9) {
             return -1;
         }
-        
-        double height = 10;
+        double volume = fillRate;
+        double area = areaOfBase;
+        double height = area / volume;
             return height;
 
     }
