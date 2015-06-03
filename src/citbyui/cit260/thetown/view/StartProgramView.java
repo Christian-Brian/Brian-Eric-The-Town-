@@ -57,7 +57,7 @@ public class StartProgramView {
     private String getPlayersName() {
         boolean valid = false; //indicates if the name has been retrived
                 String playersName = null;
-                Scanner keyboard = new Scanner(system.in); //keyboard input stream
+                Scanner keyboard = new Scanner(System.in); //keyboard input stream
                 
                 while(!valid) { //while a valid name has not been retrived
                     
@@ -66,7 +66,7 @@ public class StartProgramView {
                         
                         //get the name from the keyboard and trim off the blanks
                         playersName = keyboard.nextLine();
-                        playersName = keyboard.trim();
+                        playersName = playersName.trim();
                         
                         //if the name is invalid
                         if (playersName.length() < 2) {
@@ -86,3 +86,4 @@ public class StartProgramView {
         System.out.println("========================================");
         
     }
+}
