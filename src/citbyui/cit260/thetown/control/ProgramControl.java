@@ -6,16 +6,24 @@
 package citbyui.cit260.thetown.control;
 
 import citbyui.cit260.thetown.model.Player;
+import the.town.TheTown;
 
-/**
- *
- * @author Eric
- */
+
+
 public class ProgramControl {
 
     public static Player createPlayer(String playersName) {
-        System.out.println("\n**** createPlayer function called ****");
-        return null;
+        
+        if (playersName == null) {
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setName(playersName);
+        
+        TheTown.setPlayer(player); //save the player
+                
+        return player;
     }
     
 }

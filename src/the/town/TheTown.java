@@ -23,9 +23,9 @@ import citbyui.cit260.thetown.view.StartProgramView;
  */
 public class TheTown {
 
-    /**
-     * @param args the command line arguments
-     */
+    private static Game currentGame = null;
+    private static Player player = null;
+    
     public static void main(String[] args) {
         
         StartProgramView startProgramView = new StartProgramView();
@@ -112,6 +112,24 @@ public class TheTown {
 //        System.out.println(resInfo);
      
     }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        TheTown.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        TheTown.player = player;
+    }
+    
+    
     
      
 }

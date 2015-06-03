@@ -27,6 +27,10 @@ public class StartProgramView {
         
         //display a personalized welcome message
         this.displayWelcomeMessage(player);
+        
+        //display the main menu
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
       
 }
 
@@ -81,7 +85,7 @@ public class StartProgramView {
 
     private void displayWelcomeMessage(Player player) {
         System.out.println("\n\n====================================");
-        System.out.println("\tWelcome to the game. " + player.getName());
+        System.out.println("\tWelcome to the game, " + player.getName() + ("."));
         System.out.println("\tEnjoy yourself.");
         System.out.println("========================================");
     }
