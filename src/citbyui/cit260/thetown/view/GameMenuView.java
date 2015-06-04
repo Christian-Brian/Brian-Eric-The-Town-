@@ -3,18 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.thetown.control;
-
-import citbyui.cit260.thetown.model.Player;
+package citbyui.cit260.thetown.view;
 
 /**
  *
  * @author Eric
  */
-public class GameControl {
+public class GameMenuView {
 
-    public static void createNewGame(Player player) {
-        System.out.println("\n***createNewGame stub called***");
+    void displayMenu() {
+        System.out.println("\n*** displayMenu stub called ***");
     }
     
 }

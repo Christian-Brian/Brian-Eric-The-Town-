@@ -5,15 +5,12 @@
  */
 package citbyui.cit260.thetown.view;
 
-import citbyui.cit260.thetown.control.GameControl;
-import java.util.Scanner;
-import the.town.TheTown;
-
 /**
  *
  * @author Eric
  */
-public class MainMenuView {
+public class HelpMenuView {
+    
 
     private final String MENU = "\n"
             + "\n=================================="
@@ -106,3 +103,4 @@ public class MainMenuView {
         System.out.println("*** displayHelpMenu function called ***");    }
     
 }
+
