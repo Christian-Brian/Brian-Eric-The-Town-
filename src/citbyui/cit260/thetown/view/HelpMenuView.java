@@ -5,21 +5,27 @@
  */
 package citbyui.cit260.thetown.view;
 
+import citbyui.cit260.thetown.control.GameControl;
+import java.util.Scanner;
+import the.town.TheTown;
+
 /**
  *
- * @author Eric
+ * @author Eric & Brian
  */
 public class HelpMenuView {
     
 
     private final String MENU = "\n"
             + "\n=================================="
-            + "\n|           Main Menu             "
+            + "\n            Help Menu             "
             + "\n=================================="
-            + "\nStart - Start game"
-            + "\nContinue - Continue game"
-            + "\nHelp - Get help"
-            + "\nQuit - Quit game"
+            + "\nControls - Controls"
+            + "\nMap - Map"
+            + "\nTown - Town"
+            + "\nInventory - Inventory"
+            + "\nGame - Game Menu"
+            + "\nQuit - Quit"
             + "\n==================================";
     
     public void displayMenu() {
@@ -50,7 +56,7 @@ public class HelpMenuView {
                 while(!valid) { //while a valid name has not been retrived
                     
                         //prompt for the players name
-                        System.out.println("Select a menu option");
+                        System.out.println("Select a  help menu option");
                         
                         //get the name from the keyboard and trim off the blanks
                         menuSelection = keyboard.nextLine();
@@ -70,14 +76,20 @@ public class HelpMenuView {
     private void doAction(String selection) {
         
         switch (selection) {
-            case "start": //create and start a new game
-                this.startNewGame();
+            case "controls": //create and start a new game
+                this.displayConrolsMenu();
                 break;
-            case "continue": //continue existing game
-                this.startExistingGame();
+            case "map": //continue existing game
+                this.displayMap();
                 break;
-            case "help": // display help menu
-                this.displayHelpMenu();
+            case "town": // display help menu
+                this.displayTown();
+                break;
+            case "inventory": // display help menu
+                this.displayInventoryMenu();
+                break;
+            case "game": // display help menu
+                this.displayGameMenu();
                 break;
             case "quit": //exit program
                 return;
@@ -96,11 +108,26 @@ public class HelpMenuView {
         gameMenu.displayMenu();
     }
 
-    private void startExistingGame() {
-        System.out.println("*** startExistingGame function called ***");    }
 
-    private void displayHelpMenu() {
-        System.out.println("*** displayHelpMenu function called ***");    }
+    private void displayConrolsMenu() {
+        System.out.println("*** displayControlsMenu function called ***");
+    }
+
+    private void displayMap() {
+        System.out.println("*** displayMap function called ***");
+    }
+
+    private void displayTown() {
+        System.out.println("*** displayTown function called ***");
+    }
+
+    private void displayInventoryMenu() {
+        System.out.println("*** displayInventoryMenu function called ***");
+    }
+
+    private void displayGameMenu() {
+        System.out.println("*** displayGameMenu function called ***");
+    }
     
 }
 
