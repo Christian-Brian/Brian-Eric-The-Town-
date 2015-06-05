@@ -50,7 +50,7 @@ public class InventoryMenuView {
 
     private String getInput() {
         boolean valid = false; //indicates if the name has been retrived
-                String menuSelection = null;
+                String inventorySelection = null;
                 Scanner keyboard = new Scanner(System.in); //keyboard input stream
                 
                 while(!valid) { //while a valid name has not been retrived
@@ -59,31 +59,37 @@ public class InventoryMenuView {
                         System.out.println("View Inventory");
                         
                         //get the name from the keyboard and trim off the blanks
-                        menuSelection = keyboard.nextLine();
-                        menuSelection = menuSelection.trim();
+                        inventorySelection = keyboard.nextLine();
+                        inventorySelection = inventorySelection.trim();
                         
                         //if the name is invalid
-                        if (menuSelection.length() < 2) {
+                        if (inventorySelection.length() < 2) {
                             System.out.println("Invalid selection");
                             continue; //and repeat again
                         }
                         break; //out of the repitition (exit)
                     }
                 
-                    return menuSelection; //return the name
+                    return inventorySelection; //return the name
     }
 
     private void doAction(String selection) {
         
         switch (selection) {
-            case "start": //create and start a new game
-                this.startNewGame();
+            case "gold": //create and start a new game
+                this.dissplayGold();
                 break;
-            case "continue": //continue existing game
-                this.startExistingGame();
+            case "cloak": //continue existing game
+                this.displayCloak();
                 break;
-            case "help": // display help menu
-                this.displayHelpMenu();
+            case "shovel": // display help menu
+                this.displayshovel();
+                break;
+            case "snorkel": // display help menu
+                this.displaysnorkel();
+                break;
+            case "badge": // display help menu
+                this.displaybadge();
                 break;
             case "quit": //exit program
                 return;
@@ -100,6 +106,34 @@ public class InventoryMenuView {
             //display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayMenu();
+    }
+
+    private void startExistingGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void displayHelpMenu() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void dissplayGold() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void displayCloak() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void displayshovel() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void displaysnorkel() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void displaybadge() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

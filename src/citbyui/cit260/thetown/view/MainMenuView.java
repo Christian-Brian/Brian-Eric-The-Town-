@@ -11,7 +11,7 @@ import the.town.TheTown;
 
 /**
  *
- * @author Eric
+ * @author Eric and Brian
  */
 public class MainMenuView {
 

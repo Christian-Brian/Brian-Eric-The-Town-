@@ -50,7 +50,7 @@ public class HelpMenuView {
 
     private String getInput() {
         boolean valid = false; //indicates if the name has been retrived
-                String menuSelection = null;
+                String helpSelection = null;
                 Scanner keyboard = new Scanner(System.in); //keyboard input stream
                 
                 while(!valid) { //while a valid name has not been retrived
@@ -59,18 +59,18 @@ public class HelpMenuView {
                         System.out.println("Select a  help menu option");
                         
                         //get the name from the keyboard and trim off the blanks
-                        menuSelection = keyboard.nextLine();
-                        menuSelection = menuSelection.trim();
+                        helpSelection = keyboard.nextLine();
+                        helpSelection = helpSelection.trim();
                         
                         //if the name is invalid
-                        if (menuSelection.length() < 2) {
+                        if (helpSelection.length() < 2) {
                             System.out.println("Invalid selection");
                             continue; //and repeat again
                         }
                         break; //out of the repitition (exit)
                     }
                 
-                    return menuSelection; //return the name
+                    return helpSelection; //return the name
     }
 
     private void doAction(String selection) {
