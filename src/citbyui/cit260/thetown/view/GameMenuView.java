@@ -19,7 +19,7 @@ public class GameMenuView {
 //    }
     private final String MENU = "\n"
             + "\n=================================="
-            + "\n|           Main Menu             "
+            + "\n|           Game Menu             "
             + "\n=================================="
             + "\nMap - Map"
             + "\nTown - Town"

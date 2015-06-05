@@ -92,6 +92,7 @@ public class HelpMenuView {
                 this.displayGameMenu();
                 break;
             case "quit": //exit program
+                this.displayGameMenu();
                 return;
             default:
                 System.out.println("\n*** Invalid Selection. Try Again");
