@@ -6,6 +6,8 @@
 package citbyui.cit260.thetown.view;
 
 import citbyui.cit260.thetown.control.GameControl;
+import citbyui.cit260.thetown.control.ResourcesControl;
+import citbyui.cit260.thetown.control.WorldsControl;
 import java.util.Scanner;
 import the.town.TheTown;
 
@@ -28,6 +30,8 @@ public class CalcWaterTankView {
     
     public void displayMenu() {
         
+        int result = -1;
+        
         String selection = " ";
         do {
             
@@ -40,9 +44,9 @@ public class CalcWaterTankView {
                     input = input.substring(0, position-1);
                 }
             selection = input.toLowerCase();
-            this.doAction(selection); //do action based on  selection
+            result = this.doAction(selection); //do action based on  selection
             
-        } while (!selection.equals("quit")); //a selection is not an "Exit"
+        } while (result < 0); //a selection is not an "Exit"
         
     }
 
@@ -71,24 +75,26 @@ public class CalcWaterTankView {
                     return menuSelection; //return the name
     }
 
-    private void doAction(String selection) {
+    private int doAction(String answer) {
         
-        switch (selection) {
-            case "start": //create and start a new game
-                this.startNewGame();
-                break;
-            case "continue": //continue existing game
-                this.startExistingGame();
-                break;
-            case "help": // display help menu
-                this.displayHelpMenu();
-                break;
-            case "quit": //exit program
-                return;
-            default:
-                System.out.println("\n*** Invalid Selection. Try Again");
-                break;
+        double guess = Double.parseDouble(answer);
+        
+        double waterTank = WorldsControl.calcWaterTank(100.0, 10.0);
+        
+        if (guess == waterTank) {
+            ResourcesControl.addToInventory(50, "gold");
+            System.out.println("You found Poseidons crown. +50 gold to inventory.");
+            return 1;
         }
+        else{
+            System.out.println("Your answer is incorrect. Try again.");
+            return -1;
+        }
+        
+        //if correct
+        // let them into the barrel
+        
+        
     }
 
     private void startNewGame() {
@@ -110,6 +116,11 @@ public class CalcWaterTankView {
 
     void displayProblem() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void cmPerMin() {
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayMenu();
     }
     
 }

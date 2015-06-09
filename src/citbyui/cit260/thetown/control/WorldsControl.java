@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class WorldsControl {
     
-    public double calcVolumeOfCave(double topRadius, double midRadius, double height) {
+    public static double calcVolumeOfCave(double topRadius, double midRadius, double height) {
         
         if (height < 1 || height > 150) {
             return -1;
@@ -36,7 +36,7 @@ public class WorldsControl {
     }
     
 // Eric
-    public double calcWaterTank(double areaOfBase, double fillRate) {
+    public static double calcWaterTank(double areaOfBase, double fillRate) {
 
         if (areaOfBase > 101 || areaOfBase < 99) {
             return -1;

@@ -10,5 +10,13 @@ package citbyui.cit260.thetown.control;
  * @author Eric
  */
 public class ResourcesControl {
+    public static int addToInventory(int amount, String type){
+        System.out.println("addToInventory stub function called");
+        return 0;
+    }
     
+    public static int addToInventory(int amount, String type, String character){
+        System.out.println("addToInventory stub function called");
+        return 0;
+    }
 }
