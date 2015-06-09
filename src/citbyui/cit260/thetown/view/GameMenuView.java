@@ -27,6 +27,7 @@ public class GameMenuView {
             + "\nSave - Save game"
             + "\nRestart - Restart game"
             + "\nWater Tank - display word problem"
+            + "\n Case - Case"
             + "\nQuit - Quit game"
             + "\n==================================";
     
@@ -96,6 +97,9 @@ public class GameMenuView {
             case "water": // restart game
                 this.waterTank();
                 break;
+            case "case": // restart game
+                this.caseCubeofABox();
+                break;
             case "quit": //exit program
                 return;
             default:
@@ -139,6 +143,12 @@ public class GameMenuView {
         //display the inventory
         CalcWaterTankView calcWaterTank = new CalcWaterTankView();
         calcWaterTank.displayMenu();
+    }
+
+    private void caseCubeofABox() {
+         //display the inventory
+        CalcCaseCubeofABox calcCaseCube = new CalcCaseCubeofABox();
+        calcCaseCube.displayMenu();
     }
     
 
