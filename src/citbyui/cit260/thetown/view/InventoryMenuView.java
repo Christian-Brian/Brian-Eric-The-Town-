@@ -18,7 +18,7 @@ public class InventoryMenuView {
 
     private final String MENU = "\n"
             + "\n=================================="
-            + "\n|         Inventory Menu          "
+            + "\n          Inventory Menu          "
             + "\n=================================="
             + "\nGold - 0/50"
             + "\nCloak - 0/1"
@@ -83,13 +83,13 @@ public class InventoryMenuView {
                 this.displayCloak();
                 break;
             case "shovel": // display help menu
-                this.displayshovel();
+                this.displayShovel();
                 break;
             case "snorkel": // display help menu
-                this.displaysnorkel();
+                this.displaySnorkel();
                 break;
             case "badge": // display help menu
-                this.displaybadge();
+                this.displayBadge();
                 break;
             case "quit": //exit program
                 return;
@@ -124,15 +124,15 @@ public class InventoryMenuView {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void displayshovel() {
+    private void displayShovel() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void displaysnorkel() {
+    private void displaySnorkel() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void displaybadge() {
+    private void displayBadge() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

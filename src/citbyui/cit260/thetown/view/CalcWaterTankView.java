@@ -13,21 +13,17 @@ import the.town.TheTown;
  *
  * @author Eric
  */
-public class GameMenuView {
-//    void displayMenu() {
-//        System.out.println("\n*** displayMenu stub called ***");
-//    }
+public class CalcWaterTankView {
+    
     private final String MENU = "\n"
             + "\n=================================="
-            + "\n            Game Menu             "
+            + "\n   Calculate Water Tank Problem   "
             + "\n=================================="
-            + "\nMap - Map"
-            + "\nTown - Town"
-            + "\nInventory - Inventory"
-            + "\nSave - Save game"
-            + "\nRestart - Restart game"
-            + "\nWater Tank - display word problem"
-            + "\nQuit - Quit game"
+            + "\nA water tank, having the shape of a rectangular prism of base 100"
+            + "\nsquare centimeters is being filled at the rate of 1 liter per minute."
+            + "\nFind the rate at which the height of the water in the water tank "
+            + "\nincreases. Express your answer in centimeters per minute."
+            + "\nQuit - go back"
             + "\n==================================";
     
     public void displayMenu() {
@@ -58,7 +54,7 @@ public class GameMenuView {
                 while(!valid) { //while a valid name has not been retrived
                     
                         //prompt for the players name
-                        System.out.println("Select a menu option");
+                        System.out.println("What is the answer?");
                         
                         //get the name from the keyboard and trim off the blanks
                         menuSelection = keyboard.nextLine();
@@ -66,7 +62,7 @@ public class GameMenuView {
                         
                         //if the name is invalid
                         if (menuSelection.length() < 2) {
-                            System.out.println("Invalid selection");
+                            System.out.println("wrong.");
                             continue; //and repeat again
                         }
                         break; //out of the repitition (exit)
@@ -78,23 +74,14 @@ public class GameMenuView {
     private void doAction(String selection) {
         
         switch (selection) {
-            case "map": //display map
-                this.displayMap();
+            case "start": //create and start a new game
+                this.startNewGame();
                 break;
-            case "town": //display town
-                this.displayTown();
+            case "continue": //continue existing game
+                this.startExistingGame();
                 break;
-            case "inventory": // display inventory
-                this.displayInventory();
-                break;
-            case "save": // save game
-                this.saveCurrentGame();
-                break;
-            case "restart": // restart game
-                this.restartGame();
-                break;
-            case "water": // restart game
-                this.waterTank();
+            case "help": // display help menu
+                this.displayHelpMenu();
                 break;
             case "quit": //exit program
                 return;
@@ -113,33 +100,17 @@ public class GameMenuView {
         gameMenu.displayMenu();
     }
 
-    private void displayMap() {
-        System.out.println("*** displayMap stub function called ***");
-    }
+    private void startExistingGame() {
+        System.out.println("*** startExistingGame function called ***");    }
 
-    private void displayTown() {
-        System.out.println("*** displayTown stub function called ***");
-    }
+    private void displayHelpMenu() {
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayMenu();
+}
 
-    private void displayInventory() {
-        //display the inventory
-        InventoryMenuView inventoryMenu = new InventoryMenuView();
-        inventoryMenu.displayMenu();
-    }
-
-    private void saveCurrentGame() {
-        System.out.println("*** saveCurrentGame stub function called ***");
-    }
-
-    private void restartGame() {
-        System.out.println("*** restartGame stub function called ***");
-    }
-
-    private void waterTank() {
-        //display the inventory
-        CalcWaterTankView calcWaterTank = new CalcWaterTankView();
-        calcWaterTank.displayMenu();
+    void displayProblem() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-
 }
+    
