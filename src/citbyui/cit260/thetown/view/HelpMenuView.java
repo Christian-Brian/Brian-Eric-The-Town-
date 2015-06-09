@@ -123,7 +123,8 @@ public class HelpMenuView {
     }
 
     private void displayInventoryMenu() {
-        System.out.println("*** displayInventoryMenu function called ***");
+       InventoryMenuView inventoryMenu = new InventoryMenuView();
+        inventoryMenu.displayMenu();
     }
 
     private void displayGameMenu() {

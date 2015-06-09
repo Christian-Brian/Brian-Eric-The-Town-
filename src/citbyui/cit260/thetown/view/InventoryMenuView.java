@@ -77,7 +77,7 @@ public class InventoryMenuView {
         
         switch (selection) {
             case "gold": //create and start a new game
-                this.dissplayGold();
+                this.displayGold();
                 break;
             case "cloak": //continue existing game
                 this.displayCloak();
@@ -116,7 +116,7 @@ public class InventoryMenuView {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void dissplayGold() {
+    private void displayGold() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.thetown.control;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Eric and Brian
@@ -64,6 +66,6 @@ public class WorldsControl {
         double cubeFt=length*width*height/1728;
         return cubeFt;
     }
-    
+   
     
 }
