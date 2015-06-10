@@ -27,7 +27,7 @@ public class GameMenuView {
             + "\nSave - Save game"
             + "\nRestart - Restart game"
             + "\nWater Tank - display word problem"
-            + "\n Case - Case"
+            + "\nCase - Case"
             + "\nQuit - Quit game"
             + "\n==================================";
     

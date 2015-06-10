@@ -19,13 +19,9 @@ public class CalcCaseCubeofABox {
     
     private final String MENU = "\n"
             + "\n=================================="
-            + "\n   Calculate Water Tank Problem   "
+            + "\n   Calculate Case Cube Of A Box  "
             + "\n=================================="
-            + "\nA water tank, having the shape of a rectangular prism of base 100"
-            + "\nsquare centimeters is being filled at the rate of 1 liter per minute."
-            + "\nFind the rate at which the height of the water in the water tank "
-            + "\nincreases. Express your answer in centimeters per minute."
-            + "\nQuit - go back"
+            + "\nYou enter a cave."
             + "\n==================================";
     
     public void displayMenu() {
@@ -58,7 +54,7 @@ public class CalcCaseCubeofABox {
                 while(!valid) { //while a valid name has not been retrived
                     
                         //prompt for the players name
-                        System.out.println("What is the answer?");
+                        System.out.println("What is the case cube of a box?");
                         
                         //get the name from the keyboard and trim off the blanks
                         menuSelection = keyboard.nextLine();
@@ -82,7 +78,7 @@ public class CalcCaseCubeofABox {
         double caseCube = WorldsControl.calcCaseCubeofABox(50.0, 50.0, 50.0);
         if (guess == caseCube) {
             ResourcesControl.addToInventory(50, "gold");
-            System.out.println("You found Poseidons crown. +50 gold to inventory.");
+            System.out.println("+50 gold to inventory.");
             return 1;
         }
         else{
