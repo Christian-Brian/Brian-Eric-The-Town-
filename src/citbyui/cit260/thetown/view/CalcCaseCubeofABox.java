@@ -80,7 +80,6 @@ public class CalcCaseCubeofABox {
         double guess = Double.parseDouble(answer);
         
         double caseCube = WorldsControl.calcCaseCubeofABox(50.0, 50.0, 50.0);
-        
         if (guess == caseCube) {
             ResourcesControl.addToInventory(50, "gold");
             System.out.println("You found Poseidons crown. +50 gold to inventory.");

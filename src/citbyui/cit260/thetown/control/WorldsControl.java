@@ -62,9 +62,11 @@ public class WorldsControl {
         
         if (length < 1 || length > 100)
             return -1;
-                    
+          
         double cubeFt=length*width*height/1728;
-        return cubeFt;
+        int decimal = (int)((cubeFt+.005)*100);
+        double result = (double) decimal/100;
+        return result;
     }
 
     
