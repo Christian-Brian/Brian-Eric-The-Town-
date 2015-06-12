@@ -158,7 +158,7 @@ public class WorldsControlTest {
         double width = 50.0;
         double length = 50.0;
         WorldsControl instance = new WorldsControl();
-        double expResult = 72.33;
+        double expResult = 72.34;
         double result = instance.calcCaseCubeofABox(height, width, length);
         assertEquals(expResult, result, 0.01);
        
@@ -230,7 +230,7 @@ public class WorldsControlTest {
         height = 100.0;
         width = 50.0;
         length = 50.0;
-        expResult = 144.67;
+        expResult = 144.68;
         result = instance.calcCaseCubeofABox(height, width, length);
         assertEquals(expResult, result, 0.01);
         
@@ -239,7 +239,7 @@ public class WorldsControlTest {
         height = 50.0;
         width = 100.0;
         length = 50.0;
-        expResult = 144.67;
+        expResult = 144.68;
         result = instance.calcCaseCubeofABox(height, width, length);
         assertEquals(expResult, result, 0.01);
         
@@ -257,7 +257,7 @@ public class WorldsControlTest {
         height = 50.0;
         width = 50.0;
         length = 100.0;
-        expResult = 144.67;
+        expResult = 144.68;
         result = instance.calcCaseCubeofABox(height, width, length);
         assertEquals(expResult, result, 0.01);
         
