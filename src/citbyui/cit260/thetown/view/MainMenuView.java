@@ -70,7 +70,8 @@ public class MainMenuView extends View {
 //                    return menuSelection; //return the name
 //    }
 
-    private void doAction(String selection) {
+     @Override
+    public boolean doAction(String selection) {
         
         switch (selection) {
             case "start": //create and start a new game
@@ -83,11 +84,12 @@ public class MainMenuView extends View {
                 this.displayHelpMenu();
                 break;
             case "quit": //exit program
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid Selection. Try Again");
                 break;
         }
+        return false;
     }
 
     private void startNewGame() {
