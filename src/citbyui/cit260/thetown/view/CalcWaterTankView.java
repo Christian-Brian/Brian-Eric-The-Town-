@@ -24,7 +24,7 @@ public class CalcWaterTankView {
             + "\nA water tank, having the shape of a rectangular prism of base 100"
             + "\nsquare centimeters is being filled at the rate of 1 liter per minute."
             + "\nFind the rate at which the height of the water in the water tank "
-            + "\nincreases. Express your answer in centimeters per minute."
+            + "\nincreases. Express your answer as a whole number."
             + "\nQuit - go back"
             + "\n==================================";
     
@@ -118,10 +118,6 @@ public class CalcWaterTankView {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void cmPerMin() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
-    }
     
 }
     
