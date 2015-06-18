@@ -7,12 +7,12 @@ package citbyui.cit260.thetown.view;
 
 /**
  *
- * @author Eric
+ * @author Eric and Brian
  */
 public interface ViewInterface {
     
     public void display();
     public String getInput();
-    public boolean doAction(String value);
+    public boolean doAction(Object obj);
     
 }

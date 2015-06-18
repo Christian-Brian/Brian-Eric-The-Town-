@@ -103,7 +103,7 @@ public class CalcWaterTankView {
         
             //display the game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 
     private void startExistingGame() {
@@ -111,7 +111,7 @@ public class CalcWaterTankView {
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        helpMenu.display();
 }
 
     void displayProblem() {

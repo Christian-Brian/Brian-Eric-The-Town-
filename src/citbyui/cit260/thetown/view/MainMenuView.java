@@ -15,7 +15,8 @@ import the.town.TheTown;
  */
 public class MainMenuView extends View {
 
-     "\n"
+    public MainMenuView(){     
+        super("\n"
             + "\n=================================="
             + "\n|           Main Menu             "
             + "\n=================================="
@@ -23,7 +24,7 @@ public class MainMenuView extends View {
             + "\nContinue - Continue game"
             + "\nHelp - Get help"
             + "\nQuit - Quit game"
-            + "\n==================================";
+            + "\n==================================");
     
 //    public void displayMenu() {
 //        
@@ -68,10 +69,11 @@ public class MainMenuView extends View {
 //                    }
 //                
 //                    return menuSelection; //return the name
-//    }
+    }
 
      @Override
-    public boolean doAction(String selection) {
+    public boolean doAction(Object obj) {
+        String selection = (String) obj; 
         
         switch (selection) {
             case "start": //create and start a new game
@@ -98,7 +100,7 @@ public class MainMenuView extends View {
         
             //display the game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 
     private void startExistingGame() {
@@ -106,6 +108,6 @@ public class MainMenuView extends View {
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        helpMenu.display();
 }
 }

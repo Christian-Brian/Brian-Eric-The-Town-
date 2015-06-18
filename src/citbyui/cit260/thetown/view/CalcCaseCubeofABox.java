@@ -19,7 +19,7 @@ public class CalcCaseCubeofABox {
     
     private final String MENU = "\n"
             + "\n=================================="
-            + "\n   Calculate Case Cube Of A Box  "
+            + "\n   Calculate Volume Of A Box  "
             + "\n=================================="
             + "\nYou enter a cave."
             + "\n==================================";
@@ -54,7 +54,7 @@ public class CalcCaseCubeofABox {
                 while(!valid) { //while a valid name has not been retrived
                     
                         //prompt for the players name
-                        System.out.println("What is the case cube of a box?");
+                        System.out.println("What is the volume of a box?");
                         
                         //get the name from the keyboard and trim off the blanks
                         menuSelection = keyboard.nextLine();
@@ -98,7 +98,7 @@ public class CalcCaseCubeofABox {
         
             //display the game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 
     private void startExistingGame() {
@@ -106,7 +106,7 @@ public class CalcCaseCubeofABox {
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        helpMenu.display();
 }
 
     void displayProblem() {
@@ -115,7 +115,7 @@ public class CalcCaseCubeofABox {
 
     private void cmPerMin() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        helpMenu.display();
     }
     
 }

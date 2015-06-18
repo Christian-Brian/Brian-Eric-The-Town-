@@ -13,10 +13,10 @@ import the.town.TheTown;
  *
  * @author Brian
  */
-public class InventoryMenuView {
+public class InventoryMenuView extends View{
     
-
-    private final String MENU = "\n"
+    public InventoryMenuView(){
+        super("\n"
             + "\n=================================="
             + "\n          Inventory Menu          "
             + "\n=================================="
@@ -26,54 +26,56 @@ public class InventoryMenuView {
             + "\nBadge - 0/1"
             + "\nShovel - 0/1"
             + "\nQuit - Quit"
-            + "\n==================================";
+            + "\n==================================");
     
-    public void displayMenu() {
-        
-        String selection = " ";
-        do {
-            
-            System.out.println(MENU); //display the main menu
-            
-            String input = this.getInput(); //get the user selection
-            input = input.trim();
-            int position = input.indexOf(' ', 0); 
-                if (position > 1){
-                    input = input.substring(0, position-1);
-                }
-            selection = input.toLowerCase();
-            this.doAction(selection); //do action based on  selection
-            
-        } while (!selection.equals("quit")); //a selection is not an "Exit"
-        
+//    public void displayMenu() {
+//        
+//        String selection = " ";
+//        do {
+//            
+//            System.out.println(MENU); //display the main menu
+//            
+//            String input = this.getInput(); //get the user selection
+//            input = input.trim();
+//            int position = input.indexOf(' ', 0); 
+//                if (position > 1){
+//                    input = input.substring(0, position-1);
+//                }
+//            selection = input.toLowerCase();
+//            this.doAction(selection); //do action based on  selection
+//            
+//        } while (!selection.equals("quit")); //a selection is not an "Exit"
+//        
+//    }
+//
+//    private String getInput() {
+//        boolean valid = false; //indicates if the name has been retrived
+//                String inventorySelection = null;
+//                Scanner keyboard = new Scanner(System.in); //keyboard input stream
+//                
+//                while(!valid) { //while a valid name has not been retrived
+//                    
+//                        //prompt for the players name
+//                        System.out.println("View Inventory");
+//                        
+//                        //get the name from the keyboard and trim off the blanks
+//                        inventorySelection = keyboard.nextLine();
+//                        inventorySelection = inventorySelection.trim();
+//                        
+//                        //if the name is invalid
+//                        if (inventorySelection.length() < 2) {
+//                            System.out.println("Invalid selection");
+//                            continue; //and repeat again
+//                        }
+//                        break; //out of the repitition (exit)
+//                    }
+//                
+//                    return inventorySelection; //return the name
     }
-
-    private String getInput() {
-        boolean valid = false; //indicates if the name has been retrived
-                String inventorySelection = null;
-                Scanner keyboard = new Scanner(System.in); //keyboard input stream
-                
-                while(!valid) { //while a valid name has not been retrived
-                    
-                        //prompt for the players name
-                        System.out.println("View Inventory");
-                        
-                        //get the name from the keyboard and trim off the blanks
-                        inventorySelection = keyboard.nextLine();
-                        inventorySelection = inventorySelection.trim();
-                        
-                        //if the name is invalid
-                        if (inventorySelection.length() < 2) {
-                            System.out.println("Invalid selection");
-                            continue; //and repeat again
-                        }
-                        break; //out of the repitition (exit)
-                    }
-                
-                    return inventorySelection; //return the name
-    }
-
-    private void doAction(String selection) {
+    
+    @Override
+    public boolean doAction(Object obj) {
+        String selection = (String) obj; 
         
         switch (selection) {
             case "gold": //create and start a new game
@@ -92,11 +94,12 @@ public class InventoryMenuView {
                 this.displayBadge();
                 break;
             case "quit": //exit program
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid Selection. Try Again");
                 break;
         }
+        return false;
     }
 
     private void startNewGame() {
@@ -105,7 +108,7 @@ public class InventoryMenuView {
         
             //display the game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 
     private void startExistingGame() {
