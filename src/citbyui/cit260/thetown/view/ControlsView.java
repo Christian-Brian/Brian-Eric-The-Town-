@@ -18,10 +18,10 @@ public class ControlsView extends View {
             + "\n=================================="
             + "\n|           Controls              "
             + "\n=================================="
-            + "\nNorth - North"
-            + "\nSouth - South"
-            + "\nWest - West"
-            + "\nEast - East"
+            + "\nNorth - Moves a space north"
+            + "\nSouth - Moves a space south"
+            + "\nEast - Moves a space east"
+            + "\nWest - Moves a space west"
             + "\nQuit - Quit"
             + "\n==================================");
     
@@ -39,11 +39,11 @@ public class ControlsView extends View {
             case "south": //continue existing game
                 this.goSouth();
                 break;
-            case "west": // display help menu
-                this.goWest();
-                break;
             case "east": // display help menu
                 this.goEast();
+                break;
+            case "west": // display help menu
+                this.goWest();
                 break;
             case "quit": //exit program
                 return true;
@@ -55,18 +55,18 @@ public class ControlsView extends View {
     }
 
     private void goNorth() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("goNorth function called");
     }
 
     private void goSouth() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("goSouth function called");
     }
 
     private void goWest() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("goWest function called");
     }
 
     private void goEast() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("goEast function called");
     }
 }    

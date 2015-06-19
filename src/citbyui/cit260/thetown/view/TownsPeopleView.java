@@ -124,7 +124,7 @@ public class TownsPeopleView extends View {
         System.out.println("display character paragraph");
         
     }
-    
+
 }
 
 
