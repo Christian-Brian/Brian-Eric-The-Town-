@@ -57,7 +57,7 @@ public abstract class View implements ViewInterface {
                 while(!valid) { //while a valid name has not been retrived
                     
                         //prompt for the players name
-                        System.out.println("Select a menu option");
+                        System.out.println("Enter a value below");
                         
                         //get the name from the keyboard and trim off the blanks
                         menuSelection = keyboard.nextLine();

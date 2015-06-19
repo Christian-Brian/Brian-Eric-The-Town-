@@ -113,7 +113,8 @@ public class HelpMenuView extends View {
 
 
     private void displayConrolsMenu() {
-        System.out.println("*** displayControlsMenu function called ***");
+        ControlsView controlsMenu = new ControlsView();
+         controlsMenu.display();
     }
 
     private void displayMap() {
