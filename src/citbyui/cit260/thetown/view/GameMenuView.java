@@ -23,6 +23,7 @@ public class GameMenuView extends View {
             + "\nMap - Map"
             + "\nTown - Town"
             + "\nInventory - Inventory"
+            + "\nHelp - Get help"
             + "\nSave - Save game"
             + "\nRestart - Restart game"
             + "\nWater Tank - display word problem"
@@ -89,6 +90,9 @@ public class GameMenuView extends View {
             case "inventory": // display inventory
                 this.displayInventory();
                 break;
+            case "help": // display help menu
+                this.displayHelpMenu();
+                break;
             case "save": // save game
                 this.saveCurrentGame();
                 break;
@@ -133,6 +137,11 @@ public class GameMenuView extends View {
         InventoryMenuView inventoryMenu = new InventoryMenuView();
         inventoryMenu.display();
     }
+    
+    private void displayHelpMenu() {
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.display();
+}
 
     private void saveCurrentGame() {
         System.out.println("*** saveCurrentGame stub function called ***");
