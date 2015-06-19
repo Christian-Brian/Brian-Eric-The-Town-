@@ -23,8 +23,8 @@ public class CalcWaterTankViewTest {
     @Test
     public void testDisplayMenu() {
         System.out.println("displayMenu");
-        CalcWaterTankView instance = new CalcWaterTankView();
-        instance.displayMenu();
+        CalcWaterTankView instance = new CalcWaterTankView("");
+        instance.display();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -35,8 +35,8 @@ public class CalcWaterTankViewTest {
     @Test
     public void testDisplayProblem() {
         System.out.println("displayProblem");
-        CalcWaterTankView instance = new CalcWaterTankView();
-        instance.displayProblem();
+        CalcWaterTankView instance = new CalcWaterTankView("");
+        instance.display();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

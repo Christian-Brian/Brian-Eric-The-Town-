@@ -143,14 +143,14 @@ public class GameMenuView extends View {
 
     private void waterTank() {
         //display the inventory
-        CalcWaterTankView calcWaterTank = new CalcWaterTankView();
-        calcWaterTank.displayMenu();
+        CalcWaterTankView calcWaterTank = new CalcWaterTankView("");
+        calcWaterTank.display();
     }
 
     private void caseCubeofABox() {
          //display the inventory
-        CalcCaseCubeofABox calcCaseCube = new CalcCaseCubeofABox();
-        calcCaseCube.displayMenu();
+        CalcCaseCubeofABox calcCaseCube = new CalcCaseCubeofABox("");
+        calcCaseCube.display();
     }
     
 
