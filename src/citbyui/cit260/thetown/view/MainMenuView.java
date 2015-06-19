@@ -18,7 +18,7 @@ public class MainMenuView extends View {
     public MainMenuView(){     
         super("\n"
             + "\n=================================="
-            + "\n|           Main Menu             "
+            + "\n            Main Menu             "
             + "\n=================================="
             + "\nStart - Start game"
             + "\nContinue - Continue game"

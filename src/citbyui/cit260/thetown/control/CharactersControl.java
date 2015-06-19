@@ -10,5 +10,10 @@ package citbyui.cit260.thetown.control;
  * @author Eric
  */
 public class CharactersControl {
-    
+
+    public static Character getCharacter(String selection) {
+        System.out.println("getCharacter called");
+        return null;
+    }
 }
+    

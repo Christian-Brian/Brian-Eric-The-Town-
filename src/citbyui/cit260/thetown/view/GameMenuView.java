@@ -124,7 +124,8 @@ public class GameMenuView extends View {
     }
 
     private void displayTown() {
-        System.out.println("*** displayTown stub function called ***");
+        TownsPeopleView townsPeople = new TownsPeopleView();
+        townsPeople.display();
     }
 
     private void displayInventory() {
