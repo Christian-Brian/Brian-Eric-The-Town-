@@ -17,7 +17,10 @@ public class Game implements Serializable{
     //class instance variables
     private double startTime;
     private String attribute;
-
+    private Player player;
+    private Worlds[] worlds;
+    private Resources[] inventory;
+    
     public Game() {
     }
 
@@ -68,5 +71,31 @@ public class Game implements Serializable{
 
     public void setAttribute(String attribute) {
         this.attribute = attribute;
+    }
+    
+    
+    
+    public Player getPlayer() {
+        return player;
+    }
+    
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    
+    public Worlds[] getWorlds() {
+        return worlds;
+    }
+    
+    public void setWorlds(Worlds[] worlds) {
+        this.worlds = worlds;
+    }
+    
+    public Resources[] getInventory() {
+        return inventory;
+    }
+    
+    public void setInventory(Resources[] inventory) {
+        this.inventory = inventory;
     }
 }

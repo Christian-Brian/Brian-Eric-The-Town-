@@ -11,4 +11,15 @@ package citbyui.cit260.thetown.control;
  */
 public class MapControl {
     
+//    public static Map createNorthMap(){
+//      Map map = new Map(25, 25);  
+//      
+//      Scene[] scenes = createScenes();
+//      
+//      assignScenesToLocations(map, scenes);
+//      
+//      return map;
+//    }
+    
+    
 }

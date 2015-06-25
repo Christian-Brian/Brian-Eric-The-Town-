@@ -16,6 +16,7 @@ import java.util.Objects;
 public class Worlds implements Serializable{
     private String name;
     private String description;
+    private Map map;
 
     public Worlds() {
     }
@@ -67,5 +68,13 @@ public class Worlds implements Serializable{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+    
+    public Map getMap() {
+        return map;
+    }
+    
+    public void setMap(Map map) {
+        this.map = map;
     }
 }

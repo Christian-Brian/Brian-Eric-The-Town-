@@ -18,6 +18,9 @@ public class Map implements Serializable{
 
     public Map() {
     }
+    public Map(int x, int y){
+        
+    }
 
     @Override
     public String toString() {
