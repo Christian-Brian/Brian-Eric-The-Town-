@@ -16,10 +16,22 @@ public enum Characters implements Serializable {
 
     //enim attributes
 
-    Mark("Will input something later"),
-    Adam("Will input something later"),
-    John("Will input something later"),
-    Wayne("Will input something later"),
+    Mark("(north, but in town)(marks message:I heard you were looking to find "
+            + "treasure in these mountains. I've searched for years and haven't"
+            + " got any richer. Take my shovel with you if you're gonna go look."
+            + " Adam the goldsmith walks out there every day. Hind him if you need help"),
+    Adam("(North, but in world) scene:You look out and see a wide range of sagebrush"
+            + "in the forground against tall mointains. All the coulds seem to swirl around"
+            + "the tallest peak. There's animals in the distance. you've never seen before."
+            + " It's gonna be a long walk to those mountains. I wonder where that goldsmith is."
+            + "(adams message:I found treasure. Finally! Help me open it and you can have half."),
+    John("(East, but in town) (Scene: Dust roads lead every which way. Small towns every"
+            + " few miles. Just cacti and broken handkarts inbetween. who would choose"
+            + "to live here? I wonder where all these bandits are... (Message: If you think you're tough, try your hand east of town."
+            + "It's a good way to make money if you're good. Talk to Wayne about competing out there"),
+    Wayne("Out east is the most fierce rock, paper, scissors style fighting in the world."
+            + "Take this badge. You'll need it to fight. Look around for a bandit and get "
+            + "ready to get beat."),
     Rachael("Will input something later"),
     Selina("Will input something later"),
     Abraham("Will input something later"),
