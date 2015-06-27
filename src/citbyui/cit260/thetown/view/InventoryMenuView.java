@@ -6,6 +6,8 @@
 package citbyui.cit260.thetown.view;
 
 import citbyui.cit260.thetown.control.GameControl;
+import citbyui.cit260.thetown.control.GameControl.Item;
+import citbyui.cit260.thetown.model.Resources;
 import java.util.Scanner;
 import the.town.TheTown;
 
@@ -13,21 +15,26 @@ import the.town.TheTown;
  *
  * @author Brian
  */
-public class InventoryMenuView extends View{
-    
-    public InventoryMenuView(){
-        super("\n"
-            + "\n=================================="
-            + "\n          Inventory Menu          "
-            + "\n=================================="
-            + "\nGold - 0/50"
-            + "\nCloak - 0/1"
-            + "\nSnorkel - 0/1"
-            + "\nBadge - 0/1"
-            + "\nShovel - 0/1"
-            + "\nQuit - Quit"
-            + "\n==================================");
-    
+public class InventoryMenuView extends View {
+
+    public InventoryMenuView() {
+        super("");
+        String prompt = "\n"
+                + "\n=================================="
+                + "\n          Inventory Menu          "
+                + "\n==================================";
+
+        Resources[] inventory = GameControl.getSortedInventoryList();
+
+        for (Resources item : inventory) {
+            prompt += "\n" + item.getType();
+        }
+        prompt += "\nQuit"
+                + "\n==================================";
+        setPromptMessage(prompt);
+
+    }
+
 //    public void displayMenu() {
 //        
 //        String selection = " ";
@@ -71,12 +78,10 @@ public class InventoryMenuView extends View{
 //                    }
 //                
 //                    return inventorySelection; //return the name
-    }
-    
     @Override
     public boolean doAction(Object obj) {
-        String selection = (String) obj; 
-        
+        String selection = (String) obj;
+
         switch (selection) {
             case "gold": //create and start a new game
                 this.displayGold();
@@ -103,25 +108,44 @@ public class InventoryMenuView extends View{
     }
 
     private void displayGold() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Resources[] inventory = TheTown.getCurrentGame().getInventory();
+        System.out.println("You have " + inventory[Item.gold.ordinal()].getAmount() + " amount of Gold.");
     }
 
     private void displayCloak() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Resources[] inventory = TheTown.getCurrentGame().getInventory();
+        if (inventory[Item.cloak.ordinal()].getAmount() > 0) {
+            System.out.println("You have the cloak.");
+        } else {
+            System.out.println("You don't have the cloak.");
+        }
     }
 
     private void displayShovel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Resources[] inventory = TheTown.getCurrentGame().getInventory();
+       if (inventory[Item.shovel.ordinal()].getAmount() > 0) {
+            System.out.println("You have the shovel.");
+        } else {
+            System.out.println("You don't have the shovel.");
+        }
     }
 
     private void displaySnorkel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Resources[] inventory = TheTown.getCurrentGame().getInventory();
+        if (inventory[Item.snorkel.ordinal()].getAmount() > 0) {
+            System.out.println("You have the snorkel.");
+        } else {
+            System.out.println("You don't have the snorkel.");
+        }
     }
 
     private void displayBadge() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Resources[] inventory = TheTown.getCurrentGame().getInventory();
+        if (inventory[Item.badge.ordinal()].getAmount() > 0) {
+            System.out.println("You have the badge.");
+        } else {
+            System.out.println("You don't have the badge.");
+        }
     }
 
-    
 }
-

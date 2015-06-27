@@ -71,5 +71,24 @@ public class GameControl {
         return inventory;
     }
     
-    
+    public static Resources[] getSortedInventoryList() {
+        Resources[] originalInventoryList = TheTown.getCurrentGame().getInventory();
+        
+        Resources[] inventoryList = originalInventoryList.clone();
+        
+        for (int i = 0; i < inventoryList.length - 1; i++) {
+            int index = i;
+            for (int j = i +1; j < inventoryList.length; j++)
+                if (inventoryList[j].getType().
+                        compareToIgnoreCase(inventoryList[index].getType()) < 0)
+                    index = j;
+            
+            Resources smaller = inventoryList[index];
+            inventoryList[index] = inventoryList[i];
+            inventoryList[i] = smaller;
+        
+        }
+        
+        return inventoryList;
+    }
 }

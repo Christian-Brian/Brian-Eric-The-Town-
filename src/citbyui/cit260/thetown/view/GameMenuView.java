@@ -6,6 +6,7 @@
 package citbyui.cit260.thetown.view;
 
 import citbyui.cit260.thetown.control.GameControl;
+import citbyui.cit260.thetown.model.Locations;
 import java.util.Scanner;
 import the.town.TheTown;
 
@@ -15,22 +16,22 @@ import the.town.TheTown;
  */
 public class GameMenuView extends View {
 
-    public GameMenuView(){
+    public GameMenuView() {
         super("\n"
-            + "\n=================================="
-            + "\n            Game Menu             "
-            + "\n=================================="
-            + "\nMap - Map"
-            + "\nTown - Town"
-            + "\nInventory - Inventory"
-            + "\nHelp - Get help"
-            + "\nSave - Save game"
-            + "\nRestart - Restart game"
-            + "\nWater Tank - display word problem"
-            + "\nCase - Case"
-            + "\nQuit - Quit game"
-            + "\n==================================");
-    
+                + "\n=================================="
+                + "\n            Game Menu             "
+                + "\n=================================="
+                + "\nMap - Map"
+                + "\nTown - Town"
+                + "\nInventory - Inventory"
+                + "\nHelp - Get help"
+                + "\nSave - Save game"
+                + "\nRestart - Restart game"
+                + "\nWater Tank - display word problem"
+                + "\nCase - Case"
+                + "\nQuit - Quit game"
+                + "\n==================================");
+
 //    public void displayMenu() {
 //        
 //        String selection = " ";
@@ -75,11 +76,11 @@ public class GameMenuView extends View {
 //                
 //                    return menuSelection; //return the name
     }
-    
+
     @Override
     public boolean doAction(Object obj) {
-        String selection = (String) obj; 
-        
+        String selection = (String) obj;
+
         switch (selection) {
             case "map": //display map
                 this.displayMap();
@@ -114,17 +115,29 @@ public class GameMenuView extends View {
         return false;
     }
 
-    private void startNewGame() {
-            //create a new game
-        GameControl.createNewGame(TheTown.getPlayer());
-        
-            //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
-    }
-
+//    private void startNewGame() {
+//            //create a new game
+//        GameControl.createNewGame(TheTown.getPlayer());
+//        
+//            //display the game menu
+//        GameMenuView gameMenu = new GameMenuView();
+//        gameMenu.display();
+//    }
     private void displayMap() {
-        System.out.println("*** displayMap stub function called ***");
+        Locations[][] locations = TheTown.getCurrentGame().getMap().getLocations();
+        System.out.println("*** Welcome to TheTown ***");
+        System.out.println("  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |10 |11 |12 |13 |14 |");
+        for (int i = 0; i < locations.length; i++) {
+            System.out.println("--------------------------------------------------------------");
+            System.out.format("%2d", i);
+            for (int j = 0; j < locations[0].length; j++) {
+                System.out.print("|");
+                System.out.print(locations[i][j].getScene().getMapSymbol());
+               
+            }
+            System.out.println("|");
+        } 
+        System.out.println("--------------------------------------------------------------");
     }
 
     private void displayTown() {
@@ -138,11 +151,11 @@ public class GameMenuView extends View {
         InventoryMenuView inventoryMenu = new InventoryMenuView();
         inventoryMenu.display();
     }
-    
+
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
-}
+    }
 
     private void saveCurrentGame() {
         System.out.println("*** saveCurrentGame stub function called ***");
@@ -159,10 +172,9 @@ public class GameMenuView extends View {
     }
 
     private void caseCubeofABox() {
-         //display the inventory
+        //display the inventory
         CalcCaseCubeofABox calcCaseCube = new CalcCaseCubeofABox("");
         calcCaseCube.display();
     }
-    
 
 }
