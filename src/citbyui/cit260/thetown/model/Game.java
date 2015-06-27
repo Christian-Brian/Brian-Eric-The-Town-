@@ -18,7 +18,7 @@ public class Game implements Serializable{
     private double startTime;
     private String attribute;
     private Player player;
-    private Worlds[] worlds;
+    private Map map;
     private Resources[] inventory;
     
     public Game() {
@@ -83,12 +83,12 @@ public class Game implements Serializable{
         this.player = player;
     }
     
-    public Worlds[] getWorlds() {
-        return worlds;
+    public Map getMap() {
+        return map;
     }
     
-    public void setWorlds(Worlds[] worlds) {
-        this.worlds = worlds;
+    public void setMap(Map map) {
+        this.map = map;
     }
     
     public Resources[] getInventory() {

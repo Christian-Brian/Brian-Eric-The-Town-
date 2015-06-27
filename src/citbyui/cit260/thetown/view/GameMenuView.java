@@ -133,7 +133,8 @@ public class GameMenuView extends View {
     }
 
     private void displayInventory() {
-        //display the inventory
+        //display the inventory using a menu view 
+        //we sort the inventory list in the display function
         InventoryMenuView inventoryMenu = new InventoryMenuView();
         inventoryMenu.display();
     }

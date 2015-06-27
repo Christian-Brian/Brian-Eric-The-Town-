@@ -12,9 +12,9 @@ import static org.junit.Assert.*;
  *
  * @author Eric and Brian
  */
-public class WorldsControlTest {
+public class MapControlTest {
     
-    public WorldsControlTest() {
+    public MapControlTest() {
     }
 
     /**
@@ -28,7 +28,7 @@ public class WorldsControlTest {
         double topRadius = 25.0;
         double midRadius = 30.0;
         double height = 100.0;
-        WorldsControl instance = new WorldsControl();
+        MapControl instance = new MapControl();
         double expResult = 253945.41;
         double result = instance.calcVolumeOfCave(topRadius, midRadius, height);
         assertEquals(expResult, result, 0.01);
@@ -157,7 +157,7 @@ public class WorldsControlTest {
         double height = 50.0;
         double width = 50.0;
         double length = 50.0;
-        WorldsControl instance = new WorldsControl();
+        MapControl instance = new MapControl();
         double expResult = 72.34;
         double result = instance.calcCaseCubeofABox(height, width, length);
         assertEquals(expResult, result, 0.01);
@@ -282,7 +282,7 @@ public class WorldsControlTest {
         System.out.println("\t test #1");
         double areaOfBase = 100.0;
         double fillRate = 10.0;
-        WorldsControl instance = new WorldsControl();
+        MapControl instance = new MapControl();
         double expResult = 10.0;
         double result = instance.calcWaterTank(areaOfBase, fillRate);
         assertEquals(expResult, result, 0.0);

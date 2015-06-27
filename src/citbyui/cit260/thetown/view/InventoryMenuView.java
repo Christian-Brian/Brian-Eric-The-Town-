@@ -102,23 +102,6 @@ public class InventoryMenuView extends View{
         return false;
     }
 
-    private void startNewGame() {
-            //create a new game
-        GameControl.createNewGame(TheTown.getPlayer());
-        
-            //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
-    }
-
-    private void startExistingGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void displayHelpMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     private void displayGold() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

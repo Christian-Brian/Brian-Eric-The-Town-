@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package citbyui.cit260.thetown.model;
 
 import java.io.Serializable;
@@ -12,14 +11,36 @@ import java.io.Serializable;
  *
  * @author Eric
  */
-public class Map implements Serializable{
+public class Map implements Serializable {
+
     private double numberOfColumns;
     private double numberOfRows;
+    private Locations[][] locations;
+        
 
     public Map() {
     }
-    public Map(int x, int y){
+
+    public Map(int noOfRows, int noOfColumns) {
+        if (noOfRows < 1 || noOfColumns <1) {
+            System.out.println("The number of rows and columns must be > zero");
+            return;
+        }
         
+        this.numberOfRows = noOfRows;
+        this.numberOfColumns = noOfColumns;
+        
+        this.locations = new Locations[noOfRows][noOfColumns];
+        
+        for (int row = 0; row < noOfRows; row++) {
+            for(int column = 0; column < noOfColumns; column++) {
+                Locations location = new Locations();
+                location.setColumn(column);
+                location.setRow(row);
+                
+                locations[row][column] = location;
+            }
+        }
     }
 
     @Override
@@ -52,8 +73,6 @@ public class Map implements Serializable{
         }
         return true;
     }
-    
-    
 
     public double getNumberOfColumns() {
         return numberOfColumns;
@@ -69,5 +88,13 @@ public class Map implements Serializable{
 
     public void setNumberOfRows(double numberOfRows) {
         this.numberOfRows = numberOfRows;
+    }
+    
+    public Locations[][] getLocations(){
+        return locations;
+    }
+    
+    public void setLocations(Locations[][] locations){
+        this.locations = locations;
     }
 }

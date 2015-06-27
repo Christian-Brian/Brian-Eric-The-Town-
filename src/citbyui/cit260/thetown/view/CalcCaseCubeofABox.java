@@ -6,8 +6,8 @@
 package citbyui.cit260.thetown.view;
 
 import citbyui.cit260.thetown.control.GameControl;
+import citbyui.cit260.thetown.control.MapControl;
 import citbyui.cit260.thetown.control.ResourcesControl;
-import citbyui.cit260.thetown.control.WorldsControl;
 import java.util.Scanner;
 import the.town.TheTown;
 
@@ -78,7 +78,7 @@ public class CalcCaseCubeofABox extends View {
         String answer = (String) obj;
         double guess = Double.parseDouble(answer);
         
-        double caseCube = WorldsControl.calcCaseCubeofABox(50.0, 50.0, 50.0);
+        double caseCube = MapControl.calcCaseCubeofABox(50.0, 50.0, 50.0);
         if (guess == caseCube) {
             ResourcesControl.addToInventory(50, "gold");
             System.out.println("+50 gold to inventory.");

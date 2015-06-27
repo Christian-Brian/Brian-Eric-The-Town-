@@ -7,7 +7,7 @@ package citbyui.cit260.thetown.view;
 
 import citbyui.cit260.thetown.control.GameControl;
 import citbyui.cit260.thetown.control.ResourcesControl;
-import citbyui.cit260.thetown.control.WorldsControl;
+import citbyui.cit260.thetown.control.MapControl;
 import java.util.Scanner;
 import the.town.TheTown;
 
@@ -82,7 +82,7 @@ public class CalcWaterTankView extends View {
         String answer = (String) obj;
         double guess = Double.parseDouble(answer);
         
-        double waterTank = WorldsControl.calcWaterTank(100.0, 10.0);
+        double waterTank = MapControl.calcWaterTank(100.0, 10.0);
         
         if (guess == waterTank) {
             ResourcesControl.addToInventory(50, "gold");

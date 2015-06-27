@@ -14,24 +14,24 @@ import java.util.Objects;
  * @author Brian
  */
 public class Resources implements Serializable{
-    private String name;
+//    private String name;
     private String type;
-    private double amountOfGold;
+    private double amount;
 
     public Resources() {
     }
 
     @Override
     public String toString() {
-        return "Resources{" + "name=" + name + ", type=" + type + ", amountOfGold=" + amountOfGold + '}';
+        return "Resources{" + "type=" + type + ", amount=" + amount + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 13 * hash + Objects.hashCode(this.name);
+//        hash = 13 * hash + Objects.hashCode(this.name);
         hash = 13 * hash + Objects.hashCode(this.type);
-        hash = 13 * hash + (int) (Double.doubleToLongBits(this.amountOfGold) ^ (Double.doubleToLongBits(this.amountOfGold) >>> 32));
+        hash = 13 * hash + (int) (Double.doubleToLongBits(this.amount) ^ (Double.doubleToLongBits(this.amount) >>> 32));
         return hash;
     }
 
@@ -44,13 +44,13 @@ public class Resources implements Serializable{
             return false;
         }
         final Resources other = (Resources) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
+//        if (!Objects.equals(this.name, other.name)) {
+//            return false;
+//        }
         if (!Objects.equals(this.type, other.type)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.amountOfGold) != Double.doubleToLongBits(other.amountOfGold)) {
+        if (Double.doubleToLongBits(this.amount) != Double.doubleToLongBits(other.amount)) {
             return false;
         }
         return true;
@@ -58,13 +58,13 @@ public class Resources implements Serializable{
     
     
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 
     public String getType() {
         return type;
@@ -74,12 +74,12 @@ public class Resources implements Serializable{
         this.type = type;
     }
 
-    public double getAmountOfGold() {
-        return amountOfGold;
+    public double getAmount() {
+        return amount;
     }
 
-    public void setAmountOfGold(double amountOfGold) {
-        this.amountOfGold = amountOfGold;
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
     
 }

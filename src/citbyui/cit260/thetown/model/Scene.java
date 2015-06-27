@@ -16,6 +16,7 @@ import java.util.Objects;
 public class Scene implements Serializable{
     private String description;
     private String resourceType;
+    private String mapSymbol;
 
     public Scene() {
     }
@@ -67,6 +68,20 @@ public class Scene implements Serializable{
 
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
+    }
+
+    /**
+     * @return the mapSymbol
+     */
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
+
+    /**
+     * @param mapSymbol the mapSymbol to set
+     */
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
     }
     
 }
