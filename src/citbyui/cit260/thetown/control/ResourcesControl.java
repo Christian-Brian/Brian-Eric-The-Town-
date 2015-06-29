@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.thetown.control;
 
+import citbyui.cit260.thetown.model.Resources;
+
 /**
  *
  * @author Eric
@@ -24,4 +26,14 @@ public class ResourcesControl {
         System.out.println("addToInventory stub function called");
         return 0;
     }
+    
+    public static int countInventoryItems(Resources[] inventory) {
+    int count = 0;
+    for (Resources item: inventory) {
+        if (item.getAmount() > 0)
+            count++;
+    }
+    return count;
+}
+    
 }

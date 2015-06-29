@@ -7,6 +7,7 @@ package citbyui.cit260.thetown.view;
 
 import citbyui.cit260.thetown.control.GameControl;
 import citbyui.cit260.thetown.control.GameControl.Item;
+import citbyui.cit260.thetown.control.ResourcesControl;
 import citbyui.cit260.thetown.model.Resources;
 import java.util.Scanner;
 import the.town.TheTown;
@@ -29,7 +30,8 @@ public class InventoryMenuView extends View {
         for (Resources item : inventory) {
             prompt += "\n" + item.getType();
         }
-        prompt += "\nQuit"
+        prompt += "\nCount"
+                + "\nQuit"
                 + "\n==================================";
         setPromptMessage(prompt);
 
@@ -98,6 +100,9 @@ public class InventoryMenuView extends View {
             case "badge": // display help menu
                 this.displayBadge();
                 break;
+            case "count": // display help menu
+                this.displayCount();
+                break;    
             case "quit": //exit program
                 return true;
             default:
@@ -146,6 +151,12 @@ public class InventoryMenuView extends View {
         } else {
             System.out.println("You don't have the badge.");
         }
+    }
+
+    private void displayCount() {
+        Resources[] inventory = TheTown.getCurrentGame().getInventory();
+        int result = ResourcesControl.countInventoryItems(inventory);
+        System.out.println("You have " + result + " out of " + inventory.length + " items.");
     }
 
 }
