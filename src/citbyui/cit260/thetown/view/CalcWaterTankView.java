@@ -8,7 +8,10 @@ package citbyui.cit260.thetown.view;
 import citbyui.cit260.thetown.control.GameControl;
 import citbyui.cit260.thetown.control.ResourcesControl;
 import citbyui.cit260.thetown.control.MapControl;
+import citbyui.cit260.thetown.control.exceptions.MapControlException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import the.town.TheTown;
 
 /**
@@ -16,20 +19,20 @@ import the.town.TheTown;
  * @author Eric
  */
 public class CalcWaterTankView extends View {
+
     public CalcWaterTankView(String promptMessage) {
         super("\n"
-            + "\n=================================="
-            + "\n   Calculate Water Tank Problem   "
-            + "\n=================================="
-            + "\nA water tank, having the shape of a rectangular prism of base 100"
-            + "\nsquare centimeters is being filled at the rate of 1 liter per minute."
-            + "\nFind the rate at which the height of the water in the water tank "
-            + "\nincreases. Express your answer as a whole number."
-            + "\nQuit - go back"
-            + "\n==================================");
+                + "\n=================================="
+                + "\n   Calculate Water Tank Problem   "
+                + "\n=================================="
+                + "\nA water tank, having the shape of a rectangular prism of base 100"
+                + "\nsquare centimeters is being filled at the rate of 1 liter per minute."
+                + "\nFind the rate at which the height of the water in the water tank "
+                + "\nincreases. Express your answer as a whole number."
+                + "\nQuit - go back"
+                + "\n==================================");
     }
 
-    
 //    @Override
 //    public void display() {
 //        
@@ -77,36 +80,25 @@ public class CalcWaterTankView extends View {
 //                
 //                    return menuSelection; //return the name
 //    }
-@Override
+    @Override
     public boolean doAction(Object obj) {
         String answer = (String) obj;
         double guess = Double.parseDouble(answer);
-        
-        double waterTank = MapControl.calcWaterTank(100.0, 10.0);
-        
-        if (guess == waterTank) {
-            ResourcesControl.addToInventory(50, "gold");
-            System.out.println("You found Poseidons crown. +50 gold to inventory.");
-            return true;
+
+        try {
+            double waterTank = MapControl.calcWaterTank(100.0, 10.0);
+
+            if (guess == waterTank) {
+                ResourcesControl.addToInventory(50, "gold");
+                System.out.println("You found Poseidons crown. +50 gold to inventory.");
+                return true;
+            } else {
+                System.out.println("Your answer is incorrect. Try again.");
+            }
+
+        } catch (MapControlException me) {
+            System.out.println(me.getMessage());
         }
-        else{
-            System.out.println("Your answer is incorrect. Try again.");
-            return false;
-        }
-        
-        //if correct
-        // let them into the barrel
-        
-        
+        return false;
     }
-
-    
-
-
-    
-
-   
-
-    
 }
-    

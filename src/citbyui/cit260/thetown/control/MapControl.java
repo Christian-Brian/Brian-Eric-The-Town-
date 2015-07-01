@@ -5,6 +5,7 @@
  */
 package citbyui.cit260.thetown.control;
 
+import citbyui.cit260.thetown.control.exceptions.MapControlException;
 import citbyui.cit260.thetown.model.Game;
 import citbyui.cit260.thetown.model.Locations;
 import citbyui.cit260.thetown.model.Map;
@@ -17,22 +18,25 @@ import the.town.TheTown;
  */
 public class MapControl {
 
-    public static double calcVolumeOfCave(double topRadius, double midRadius, double height) {
+    public static double calcVolumeOfCave(double topRadius, double midRadius, double height) throws MapControlException {
 
         if (height < 1 || height > 150) {
-            return -1;
+            throw new MapControlException("Incorrect height, " 
+                    + height +" it must be between 1 and 150.");
         }
 
         if (topRadius < 1 || topRadius > 50) {
-            return -1;
+            throw new MapControlException("Incorrect top radius, " 
+                    + topRadius +" it must be between 1 and 50.");
         }
 
         if (midRadius < topRadius) {
-            return -1;
+            throw new MapControlException("Incorrect mid radius to top radius");
         }
 
         if (midRadius < 10 || midRadius > 45) {
-            return -1;
+            throw new MapControlException("Incorrect mid radius, " 
+                    + midRadius +" it must be between 10 and 45.");
         }
 
         double volume = height * Math.PI * ((2 * Math.pow(midRadius, 2) + Math.pow(topRadius, 2)) / 3);
@@ -40,14 +44,16 @@ public class MapControl {
     }
 
 // Eric
-    public static double calcWaterTank(double areaOfBase, double fillRate) {
+    public static double calcWaterTank(double areaOfBase, double fillRate) throws MapControlException {
 
         if (areaOfBase > 101 || areaOfBase < 99) {
-            return -1;
+            throw new MapControlException("Incorrect area of base, " 
+                    + areaOfBase + " it must be between 99 and 101.");
         }
 
         if (fillRate > 10 || fillRate < 9) {
-            return -1;
+            throw new MapControlException("Incorrect fill rate, " 
+                    + fillRate + " it must be between 9 and 10.");
         }
         double volume = fillRate;
         double area = areaOfBase;
@@ -57,18 +63,21 @@ public class MapControl {
     }
 // Brian
 
-    public static double calcCaseCubeofABox(double height, double width, double length) {
+    public static double calcCaseCubeofABox(double height, double width, double length) throws MapControlException {
 
         if (height < 1 || height > 100) {
-            return -1;
+            throw new MapControlException("Incorrect height, " 
+                    + height + " it must be between 1 and 100.");
         }
 
         if (width < 1 || width > 100) {
-            return -1;
+            throw new MapControlException("Incorrect width, " 
+                    + width + " it must be between 1 and 100.");
         }
 
         if (length < 1 || length > 100) {
-            return -1;
+            throw new MapControlException("Incorrect length, " 
+                    + length + " it must be between 1 and 100.");
         }
 
         double cubeFt = length * width * height / 1728;

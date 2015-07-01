@@ -8,7 +8,10 @@ package citbyui.cit260.thetown.view;
 import citbyui.cit260.thetown.control.GameControl;
 import citbyui.cit260.thetown.control.MapControl;
 import citbyui.cit260.thetown.control.ResourcesControl;
+import citbyui.cit260.thetown.control.exceptions.MapControlException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import the.town.TheTown;
 
 /**
@@ -16,17 +19,17 @@ import the.town.TheTown;
  * @author Eric
  */
 public class CalcCaseCubeofABox extends View {
+
     public CalcCaseCubeofABox(String promptMessage) {
         super("\n"
-            + "\n=================================="
-            + "\n   Calculate Volume Of A Box  "
-            + "\n=================================="
-            + "\nYou enter a cave."
-            + "\n==================================");
+                + "\n=================================="
+                + "\n   Calculate Volume Of A Box  "
+                + "\n=================================="
+                + "\nYou enter a cave."
+                + "\n==================================");
 
-    
     }
-    
+
 //    public void displayMenu() {
 //        
 //        int result = -1;
@@ -48,7 +51,6 @@ public class CalcCaseCubeofABox extends View {
 //        } while (result < 0); //a selection is not an "Exit"
 //        
 //    }
-
 //    private String getInput() {
 //        boolean valid = false; //indicates if the name has been retrived
 //                String menuSelection = null;
@@ -73,29 +75,25 @@ public class CalcCaseCubeofABox extends View {
 //                
 //                    return menuSelection; //return the name
 //    }
-@Override
+    @Override
     public boolean doAction(Object obj) {
+
         String answer = (String) obj;
         double guess = Double.parseDouble(answer);
-        
-        double caseCube = MapControl.calcCaseCubeofABox(50.0, 50.0, 50.0);
-        if (guess == caseCube) {
-            ResourcesControl.addToInventory(50, "gold");
-            System.out.println("+50 gold to inventory.");
-            return true;
+
+        try {
+            double caseCube = MapControl.calcCaseCubeofABox(50.0, 50.0, 50.0);
+            if (guess == caseCube) {
+                ResourcesControl.addToInventory(50, "gold");
+                System.out.println("+50 gold to inventory.");
+                return true;
+            } else {
+                System.out.println("Your answer is incorrect. Try again.");
+            }
+
+        } catch (MapControlException me) {
+            System.out.println(me.getMessage());
         }
-        else{
-            System.out.println("Your answer is incorrect. Try again.");
-            return false;
-        }
-        
-        //if correct
-        // let them into the barrel
-
-   
-
- 
-
+        return false;
     }
 }
-    
