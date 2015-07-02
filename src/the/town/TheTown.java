@@ -29,7 +29,14 @@ public class TheTown {
     public static void main(String[] args) {
         
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.startProgram();
+        try {
+          startProgramView.startProgram();   
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.display();
+        }
+       
         
 //        Player playerOne = new Player();
 //        
