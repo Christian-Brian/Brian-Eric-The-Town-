@@ -5,6 +5,7 @@
  */
 package citbyui.cit260.thetown.control;
 
+import citbyui.cit260.thetown.model.Characters;
 import citbyui.cit260.thetown.model.Game;
 import citbyui.cit260.thetown.model.Player;
 import citbyui.cit260.thetown.model.Resources;
@@ -91,8 +92,30 @@ public class GameControl {
         
         return inventoryList;
     }
-   
-
-
+    
+    public static Characters[] sortCharacters(Characters[] arr){
+         
+        for (int i = 0; i < arr.length - 1; i++)
+        {
+            int index = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                //get the name of the character in position j
+                String firstName = arr[j].name();
+                //get the name of the character in positin index in the array
+                String secondName = arr[index].name();
+                //compare to se if first name is less than second name
+                if (firstName.compareTo(secondName) < 0) {
+                    index = j;
+                }
+            }
+            Characters smallerName = arr[index]; 
+            arr[index] = arr[i];
+            arr[i] = smallerName;
+        }
+        return arr;
+    }
 }
+
+    //sort the array of charactes
+    //go through each character get the name, and print the name
 

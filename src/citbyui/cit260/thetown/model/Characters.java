@@ -18,15 +18,15 @@ public enum Characters implements Serializable {
 
     Mark("(north, but in town)(marks message:I heard you were looking to find "
             + "treasure in these mountains. I've searched for years and haven't"
-            + " got any richer. Take my shovel with you if you're gonna go look."
-            + " Adam the goldsmith walks out there every day. Hind him if you need help"),
+            + "got any richer. Take my shovel with you if you're gonna go look."
+            + "Adam the goldsmith walks out there every day. Hind him if you need help"),
     Adam("(North, but in world) (World description:You look out and see a wide range of sagebrush"
             + "in the forground against tall mointains. All the coulds seem to swirl around"
             + "the tallest peak. There's animals in the distance. you've never seen before."
-            + " It's gonna be a long walk to those mountains. I wonder where that goldsmith is."
+            + "It's gonna be a long walk to those mountains. I wonder where that goldsmith is."
             + "(adams message:I found treasure. Finally! Help me open it and you can have half."),
     John("(East, but in town) (World description: Dust roads lead every which way. Small towns every"
-            + " few miles. Just cacti and broken handkarts inbetween. who would choose"
+            + "few miles. Just cacti and broken handkarts inbetween. who would choose"
             + "to live here? I wonder where all these bandits are... (Message: If you think you're"
             + "tough, try your hand east of town.It's a good way to make money if you're good."
             + " Talk to Wayne about competing out there"),
@@ -40,7 +40,7 @@ public enum Characters implements Serializable {
             + "Perfect waves crashing upon the shore line. Strange trees boarder the sand."
             + "The air is cooler over here. Why are people not here all the time?!"
             + "Selinas message: I've had some good luck today finding rare shells. "
-            + "I keep all the opster pearlsi find in this water tank i made. "
+            + "I keep all the oyster pearlsi find in this water tank i made. "
             + "If you answer this problem i'll share some with you."),
     Abraham("(Abrahams message:No one knows whats out there. Most people who "
             + "explore west don't come back. They say they found whats beyond "

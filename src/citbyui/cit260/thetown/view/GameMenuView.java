@@ -29,6 +29,7 @@ public class GameMenuView extends View {
                 + "\nRestart - Restart game"
                 + "\nWater Tank - display word problem"
                 + "\nCase - Case"
+                + "\nCave - Cave"
                 + "\nQuit - Quit game"
                 + "\n==================================");
 
@@ -106,6 +107,9 @@ public class GameMenuView extends View {
             case "case": // restart game
                 this.caseCubeofABox();
                 break;
+            case "cave": // restart game
+                this.calcVolumeOfCave();
+                break;
             case "quit": //exit program
                 return true;
             default:
@@ -175,6 +179,10 @@ public class GameMenuView extends View {
         //display the inventory
         CalcCaseCubeofABox calcCaseCube = new CalcCaseCubeofABox("");
         calcCaseCube.display();
+    }
+
+    private void calcVolumeOfCave() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

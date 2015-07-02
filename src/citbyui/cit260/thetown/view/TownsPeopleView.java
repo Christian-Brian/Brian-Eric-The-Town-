@@ -31,6 +31,7 @@ public class TownsPeopleView extends View {
             + "\nare fishing off the bridge. Alfred is swimming"
             + "\nWith a large group of people in the lake."
             + "\nGordon is tilling a garden."
+            + "\nWho - Who can i talk to?"
             + "\n==================================");
     
 //    public void displayMenu() {
@@ -109,6 +110,9 @@ public class TownsPeopleView extends View {
             case "gordon": // display help menu
                 this.displayTownsPeople(selection);
                 break;
+            case "who": // display help menu
+                this.displayWho(selection);
+                break;
             case "quit": //exit program
                 return true;
             default:
@@ -123,6 +127,12 @@ public class TownsPeopleView extends View {
         Character character = CharactersControl.getCharacter(selection);
         System.out.println("display character paragraph");
         
+    }
+
+    private void displayWho(String selection) {
+    //sort the array of charactes
+    //go through each character get the name, and print the name
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

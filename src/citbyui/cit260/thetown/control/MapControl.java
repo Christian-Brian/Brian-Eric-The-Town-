@@ -40,7 +40,9 @@ public class MapControl {
         }
 
         double volume = height * Math.PI * ((2 * Math.pow(midRadius, 2) + Math.pow(topRadius, 2)) / 3);
-        return volume;
+        int decimal = (int) ((volume + .005) * 100);
+        double result = (double) decimal / 100;
+        return result;
     }
 
 // Eric
