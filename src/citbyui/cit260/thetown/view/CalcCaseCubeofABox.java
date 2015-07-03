@@ -79,7 +79,19 @@ public class CalcCaseCubeofABox extends View {
     public boolean doAction(Object obj) {
 
         String answer = (String) obj;
-        double guess = Double.parseDouble(answer);
+        double guess;
+        if (answer.compareToIgnoreCase("quit") == 0){
+            return true;
+        }
+            
+        
+        try {
+            guess = Double.parseDouble(answer);
+        } catch (NumberFormatException nf) {
+            System.out.println("\n You must enter a valid number."
+                    + " Try again or enter quit.");
+            return false;
+        }
 
         try {
             double caseCube = MapControl.calcCaseCubeofABox(50.0, 50.0, 50.0);
