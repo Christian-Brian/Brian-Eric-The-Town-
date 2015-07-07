@@ -26,15 +26,59 @@ public class TheTown {
     private static Game currentGame = null;
     private static Player player = null;
     
+    private static PrintWriter outFile = null;
+    private static BufferReader inFile = null;
+    
+    private static PrintWriter logFile = null;
+    
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        TheTown.outFile = outFile;
+    }
+
+    public static BufferReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferReader inFile) {
+        TheTown.inFile = inFile;
+    }
+    
+
+    
     public static void main(String[] args) {
+        
+        //open character stream files for end user input and output
+        TheTown.inFile =
+                new BufferedReader(new InputStreamReader(System.in));
+        
+        TheTown.outFile = new PrintWriter(System.out, true);  
         
         StartProgramView startProgramView = new StartProgramView();
         try {
-          startProgramView.startProgram();   
+            
+          startProgramView.startProgram(); 
+          
         } catch (Throwable te) {
             System.out.println(te.getMessage());
             te.printStackTrace();
             startProgramView.display();
+        }
+        
+        finally {
+            try {
+                if (TheTown.inFile != null)
+                    TheTown.inFile.close();
+                
+                if (TheTown.outFile != null)
+                    TheTown.outFile.close();
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+                return;
+            }
         }
        
         
