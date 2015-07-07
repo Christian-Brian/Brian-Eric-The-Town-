@@ -5,13 +5,17 @@
  */
 package citbyui.cit260.thetown.view;
 
+import java.io.PrintWriter;
+import the.town.TheTown;
+
 /**
  *
  * @author Eric
  */
 public class ErrorView {
     
-    private static final PRintWriter errorFile = TheTown.getOutFile();
+    private static final PrintWriter errorFile = TheTown.getOutFile();
+    private static final PrintWriter logFile = TheTown.getLogFile();
     
     public static void display(String className, String errorMessage) {
         
@@ -19,6 +23,9 @@ public class ErrorView {
                     "-----------------------------------------"
                   + "\n- ERROR - " + errorMessage
                   + "\n---------------------------------------");
+    
+        // log error
+        logFile.println(className + " - " + errorMessage);
     }
     
 }

@@ -16,6 +16,9 @@ import citbyui.cit260.thetown.model.Game;
 import citbyui.cit260.thetown.model.Locations;
 import citbyui.cit260.thetown.model.Map;
 import citbyui.cit260.thetown.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 /**
  *
@@ -47,18 +50,33 @@ public class TheTown {
         TheTown.inFile = inFile;
     }
     
+    public static PrintWritter getLogFile() {
+        return logFile;
+    }
+    
+    public staticVoid setLogFile(printWriter logFile) {
+        TheTown.logFile = logFile;
+        return logFile;
+    }
+    
 
     
     public static void main(String[] args) {
         
-        //open character stream files for end user input and output
+        StartProgramView startProgramView = new StartProgramView();
+        try {
+            
+            //open character stream files for end user input and output
         TheTown.inFile =
                 new BufferedReader(new InputStreamReader(System.in));
         
-        TheTown.outFile = new PrintWriter(System.out, true);  
+        TheTown.outFile = new PrintWriter(System.out, true); 
         
-        StartProgramView startProgramView = new StartProgramView();
-        try {
+        //open log file
+        String filePath = "log.txt";
+        TheTown.logFile = new PrintWriter()
+        TheTown.logFile = new PrintWriter (filePath);
+        
             
           startProgramView.startProgram(); 
           
@@ -75,6 +93,9 @@ public class TheTown {
                 
                 if (TheTown.outFile != null)
                     TheTown.outFile.close();
+                
+                if (TheTown.logFile != null)
+                    TheTown.logFile.close();
             } catch (IOException ex) {
                 System.out.println("Error closing files");
                 return;
