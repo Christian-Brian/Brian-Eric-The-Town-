@@ -17,7 +17,7 @@ import the.town.TheTown;
 public abstract class View implements ViewInterface {
 
     private String promptMessage;
-    
+
     protected final BufferedReader keyboard = TheTown.getInFile();
     protected final PrintWriter console = TheTown.getOutFile();
 
@@ -57,28 +57,31 @@ public abstract class View implements ViewInterface {
 
     @Override
     public String getInput() {
-        
+
         boolean valid = false; //indicates if the name has been retrived
         String menuSelection = null;
 //        Scanner keyboard = new Scanner(System.in); //keyboard input stream
+        try {
 
-        while (!valid) { //while a valid name has not been retrived
+            while (!valid) { //while a valid name has not been retrived
 
-            //prompt for the players name
-            System.out.println("Enter a value below");
+                //prompt for the players name
+                this.console.println("Enter a value below");
 
-            //get the name from the keyboard and trim off the blanks
-            menuSelection = this.keyboard.readLine();
-            menuSelection = menuSelection.trim();
+                //get the name from the keyboard and trim off the blanks
+                menuSelection = this.keyboard.readLine();
+                menuSelection = menuSelection.trim();
 
-            //if the name is invalid
-            if (menuSelection.length() < 2) {
-                System.out.println("Input too short");
-                continue; //and repeat again
+                //if the name is invalid
+                if (menuSelection.length() < 2) {
+                    ErrorView.display(this.getClass().getName(),"Input too short");
+                    continue; //and repeat again
+                }
+                break; //out of the repitition (exit)
             }
-            break; //out of the repitition (exit)
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(),"Error reading input: " + e.getMessage());
         }
-
         return menuSelection; //return the name
     }
 

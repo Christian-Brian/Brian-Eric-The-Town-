@@ -7,10 +7,12 @@ package citbyui.cit260.thetown.view;
 
 import citbyui.cit260.thetown.control.ProgramControl;
 import citbyui.cit260.thetown.model.Player;
+import java.io.BufferedReader;
 import java.util.Scanner;
+import the.town.TheTown;
 
 public class StartProgramView {
-    
+    protected final BufferedReader keyboard = TheTown.getInFile();
     public StartProgramView() {
         
     }
@@ -64,15 +66,15 @@ public class StartProgramView {
     private String getPlayersName() {
         boolean valid = false; //indicates if the name has been retrived
                 String playersName = null;
-                Scanner keyboard = new Scanner(System.in); //keyboard input stream
-                
+//                Scanner keyboard = new Scanner(System.in); //keyboard input stream
+                try {
                 while(!valid) { //while a valid name has not been retrived
                     
                         //prompt for the players name
                         System.out.println("Enter the characters name below:");
                         
                         //get the name from the keyboard and trim off the blanks
-                        playersName = keyboard.nextLine();
+                        playersName = this.keyboard.readLine();
                         playersName = playersName.trim();
                         
                         //if the name is invalid
@@ -82,7 +84,9 @@ public class StartProgramView {
                         }
                         break; //out of the repitition (exit)
                     }
-                
+                } catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
+        }
                     return playersName; //return the name
                 }
 

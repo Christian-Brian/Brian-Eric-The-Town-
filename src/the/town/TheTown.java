@@ -17,6 +17,7 @@ import citbyui.cit260.thetown.model.Locations;
 import citbyui.cit260.thetown.model.Map;
 import citbyui.cit260.thetown.view.StartProgramView;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
@@ -30,7 +31,7 @@ public class TheTown {
     private static Player player = null;
     
     private static PrintWriter outFile = null;
-    private static BufferReader inFile = null;
+    private static BufferedReader inFile = null;
     
     private static PrintWriter logFile = null;
     
@@ -42,28 +43,27 @@ public class TheTown {
         TheTown.outFile = outFile;
     }
 
-    public static BufferReader getInFile() {
+    public static BufferedReader getInFile() {
         return inFile;
     }
 
-    public static void setInFile(BufferReader inFile) {
+    public static void setInFile(BufferedReader inFile) {
         TheTown.inFile = inFile;
     }
     
-    public static PrintWritter getLogFile() {
+    public static PrintWriter getLogFile() {
         return logFile;
     }
     
-    public staticVoid setLogFile(printWriter logFile) {
+    public static void setLogFile(PrintWriter logFile) {
         TheTown.logFile = logFile;
-        return logFile;
     }
     
 
     
     public static void main(String[] args) {
         
-        StartProgramView startProgramView = new StartProgramView();
+        
         try {
             
             //open character stream files for end user input and output
@@ -74,16 +74,15 @@ public class TheTown {
         
         //open log file
         String filePath = "log.txt";
-        TheTown.logFile = new PrintWriter()
         TheTown.logFile = new PrintWriter (filePath);
         
-            
+           StartProgramView startProgramView = new StartProgramView(); 
           startProgramView.startProgram(); 
           
         } catch (Throwable te) {
             System.out.println(te.getMessage());
             te.printStackTrace();
-            startProgramView.display();
+//            startProgramView.display();
         }
         
         finally {
