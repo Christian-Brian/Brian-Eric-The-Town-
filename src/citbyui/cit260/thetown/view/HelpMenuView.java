@@ -96,7 +96,7 @@ public class HelpMenuView extends View {
                 this.displayGameMenu();
                 return true;
             default:
-                System.out.println("\n*** Invalid Selection. Try Again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection. Try Again");
                 break;
         }
         return false;
@@ -118,11 +118,11 @@ public class HelpMenuView extends View {
     }
 
     private void displayMap() {
-        System.out.println("*** displayMap function called ***");
+        this.console.println("*** displayMap function called ***");
     }
 
     private void displayTown() {
-        System.out.println("*** displayTown function called ***");
+        this.console.println("*** displayTown function called ***");
     }
 
     private void displayInventoryMenu() {
@@ -131,7 +131,7 @@ public class HelpMenuView extends View {
     }
 
     private void displayGameMenu() {
-        System.out.println("*** displayGameMenu function called ***");
+        this.console.println("*** displayGameMenu function called ***");
     }
     
 }

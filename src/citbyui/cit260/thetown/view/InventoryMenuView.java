@@ -106,7 +106,7 @@ public class InventoryMenuView extends View {
             case "quit": //exit program
                 return true;
             default:
-                System.out.println("\n*** Invalid Selection. Try Again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection. Try Again");
                 break;
         }
         return false;
@@ -114,49 +114,49 @@ public class InventoryMenuView extends View {
 
     private void displayGold() {
         Resources[] inventory = TheTown.getCurrentGame().getInventory();
-        System.out.println("You have " + inventory[Item.gold.ordinal()].getAmount() + " amount of Gold.");
+        this.console.println("You have " + inventory[Item.gold.ordinal()].getAmount() + " amount of Gold.");
     }
 
     private void displayCloak() {
         Resources[] inventory = TheTown.getCurrentGame().getInventory();
         if (inventory[Item.cloak.ordinal()].getAmount() > 0) {
-            System.out.println("You have the cloak.");
+            this.console.println("You have the cloak.");
         } else {
-            System.out.println("You don't have the cloak.");
+            this.console.println("You don't have the cloak.");
         }
     }
 
     private void displayShovel() {
         Resources[] inventory = TheTown.getCurrentGame().getInventory();
        if (inventory[Item.shovel.ordinal()].getAmount() > 0) {
-            System.out.println("You have the shovel.");
+            this.console.println("You have the shovel.");
         } else {
-            System.out.println("You don't have the shovel.");
+            this.console.println("You don't have the shovel.");
         }
     }
 
     private void displaySnorkel() {
         Resources[] inventory = TheTown.getCurrentGame().getInventory();
         if (inventory[Item.snorkel.ordinal()].getAmount() > 0) {
-            System.out.println("You have the snorkel.");
+            this.console.println("You have the snorkel.");
         } else {
-            System.out.println("You don't have the snorkel.");
+            this.console.println("You don't have the snorkel.");
         }
     }
 
     private void displayBadge() {
         Resources[] inventory = TheTown.getCurrentGame().getInventory();
         if (inventory[Item.badge.ordinal()].getAmount() > 0) {
-            System.out.println("You have the badge.");
+            this.console.println("You have the badge.");
         } else {
-            System.out.println("You don't have the badge.");
+            this.console.println("You don't have the badge.");
         }
     }
 
     private void displayCount() {
         Resources[] inventory = TheTown.getCurrentGame().getInventory();
         int result = ResourcesControl.countInventoryItems(inventory);
-        System.out.println("You have " + result + " out of " + inventory.length + " items.");
+        this.console.println("You have " + result + " out of " + inventory.length + " items.");
     }
 
 }
