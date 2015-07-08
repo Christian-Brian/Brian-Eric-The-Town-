@@ -48,25 +48,25 @@ public class ControlsView extends View {
             case "quit": //exit program
                 return true;
             default:
-                System.out.println("\n*** Invalid Selection. Try Again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection. Try Again");
                 break;
         }
         return false;
     }
 
     private void goNorth() {
-        System.out.println("goNorth function called");
+        this.console.println("goNorth function called");
     }
 
     private void goSouth() {
-        System.out.println("goSouth function called");
+        this.console.println("goSouth function called");
     }
 
     private void goWest() {
-        System.out.println("goWest function called");
+        this.console.println("goWest function called");
     }
 
     private void goEast() {
-        System.out.println("goEast function called");
+        this.console.println("goEast function called");
     }
 }    

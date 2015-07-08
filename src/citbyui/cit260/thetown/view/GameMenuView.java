@@ -113,7 +113,7 @@ public class GameMenuView extends View {
             case "quit": //exit program
                 return true;
             default:
-                System.out.println("\n*** Invalid Selection. Try Again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection. Try Again");
                 break;
         }
         return false;
@@ -129,19 +129,19 @@ public class GameMenuView extends View {
 //    }
     private void displayMap() {
         Locations[][] locations = TheTown.getCurrentGame().getMap().getLocations();
-        System.out.println("*** Welcome to TheTown ***");
-        System.out.println("  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |10 |11 |12 |13 |14 |");
+        this.console.println("*** Welcome to TheTown ***");
+        this.console.println("  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |10 |11 |12 |13 |14 |");
         for (int i = 0; i < locations.length; i++) {
-            System.out.println("--------------------------------------------------------------");
-            System.out.format("%2d", i);
+            this.console.println("--------------------------------------------------------------");
+            this.console.format("%2d", i);
             for (int j = 0; j < locations[0].length; j++) {
-                System.out.print("|");
+                this.console.print("|");
                 System.out.print(locations[i][j].getScene().getMapSymbol());
                
             }
-            System.out.println("|");
+            this.console.println("|");
         } 
-        System.out.println("--------------------------------------------------------------");
+        this.console.println("--------------------------------------------------------------");
     }
 
     private void displayTown() {
@@ -162,11 +162,11 @@ public class GameMenuView extends View {
     }
 
     private void saveCurrentGame() {
-        System.out.println("*** saveCurrentGame stub function called ***");
+        this.console.println("*** saveCurrentGame stub function called ***");
     }
 
     private void restartGame() {
-        System.out.println("*** restartGame stub function called ***");
+        this.console.println("*** restartGame stub function called ***");
     }
 
     private void waterTank() {

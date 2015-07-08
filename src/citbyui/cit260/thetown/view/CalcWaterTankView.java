@@ -92,7 +92,7 @@ public class CalcWaterTankView extends View {
         try {
             guess = Double.parseDouble(answer);
         } catch (NumberFormatException nf) {
-            System.out.println("\n You must enter a valid number."
+            this.console.println("\n You must enter a valid number."
                     + " Try again or enter quit.");
             return false;
         }
@@ -102,14 +102,14 @@ public class CalcWaterTankView extends View {
 
             if (guess == waterTank) {
                 ResourcesControl.addToInventory(50, "gold");
-                System.out.println("You found Poseidons crown. +50 gold to inventory.");
+                this.console.println("You found Poseidons crown. +50 gold to inventory.");
                 return true;
             } else {
-                System.out.println("Your answer is incorrect. Try again.");
+                ErrorView.display(this.getClass().getName(),"Your answer is incorrect. Try again.");
             }
 
         } catch (MapControlException me) {
-            System.out.println(me.getMessage());
+            this.console.println(me.getMessage());
         }
         return false;
     }
