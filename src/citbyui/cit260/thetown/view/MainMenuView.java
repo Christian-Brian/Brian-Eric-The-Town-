@@ -23,6 +23,7 @@ public class MainMenuView extends View {
             + "\nStart - Start game"
             + "\nContinue - Continue game"
             + "\nHelp - Get help"
+            + "\nSave - Save game"
             + "\nQuit - Quit game"
             + "\n==================================");
     
@@ -85,6 +86,9 @@ public class MainMenuView extends View {
             case "help": // display help menu
                 this.displayHelpMenu();
                 break;
+            case "save": // save game
+                this.saveCurrentGame();
+                break;    
             case "quit": //exit program
                 return true;
             default:
@@ -104,10 +108,33 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        System.out.println("*** startExistingGame function called ***");    }
+        this.console.println("\n\nEnter the file path for file where the game " 
+                             + "is to be saved.");   
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.getExistingGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+    }
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
-}
+    }
+    
+    private void saveCurrentGame() {
+        this.console.println("\n\nEnter the file path for file where the game " 
+                             + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.saveGame(TheTown.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenyView", ex.getMessage());
+        }
+    }
 }

@@ -8,11 +8,13 @@ package citbyui.cit260.thetown.view;
 import citbyui.cit260.thetown.control.ProgramControl;
 import citbyui.cit260.thetown.model.Player;
 import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import the.town.TheTown;
 
 public class StartProgramView {
     protected final BufferedReader keyboard = TheTown.getInFile();
+    protected final PrintWriter console = TheTown.getOutFile();
     public StartProgramView() {
         
     }

@@ -25,7 +25,6 @@ public class GameMenuView extends View {
                 + "\nTown - Town"
                 + "\nInventory - Inventory"
                 + "\nHelp - Get help"
-                + "\nSave - Save game"
                 + "\nRestart - Restart game"
                 + "\nWater Tank - display word problem"
                 + "\nCase - Case"
@@ -95,9 +94,6 @@ public class GameMenuView extends View {
             case "help": // display help menu
                 this.displayHelpMenu();
                 break;
-            case "save": // save game
-                this.saveCurrentGame();
-                break;
             case "restart": // restart game
                 this.restartGame();
                 break;
@@ -136,7 +132,7 @@ public class GameMenuView extends View {
             this.console.format("%2d", i);
             for (int j = 0; j < locations[0].length; j++) {
                 this.console.print("|");
-                System.out.print(locations[i][j].getScene().getMapSymbol());
+                this.console.print(locations[i][j].getScene().getMapSymbol());
                
             }
             this.console.println("|");
@@ -159,10 +155,6 @@ public class GameMenuView extends View {
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
-    }
-
-    private void saveCurrentGame() {
-        this.console.println("*** saveCurrentGame stub function called ***");
     }
 
     private void restartGame() {
