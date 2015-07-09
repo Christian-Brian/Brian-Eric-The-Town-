@@ -5,13 +5,16 @@
  */
 package citbyui.cit260.thetown.model;
 
+import java.io.PrintWriter;
 import java.io.Serializable;
+import the.town.TheTown;
 
 /**
  *
  * @author Eric
  */
 public class Map implements Serializable {
+    protected final PrintWriter console = TheTown.getOutFile();
 
     private double numberOfColumns;
     private double numberOfRows;
@@ -23,7 +26,7 @@ public class Map implements Serializable {
 
     public Map(int noOfRows, int noOfColumns) {
         if (noOfRows < 1 || noOfColumns <1) {
-            System.out.println("The number of rows and columns must be > zero");
+            this.console.println("The number of rows and columns must be > zero");
             return;
         }
         

@@ -116,7 +116,7 @@ public class TownsPeopleView extends View {
             case "quit": //exit program
                 return true;
             default:
-                System.out.println("\n*** Invalid Selection. Try Again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection. Try Again");
                 break;
         }
         return false;
@@ -125,7 +125,7 @@ public class TownsPeopleView extends View {
 
     private void displayTownsPeople(String selection) {
         Character character = CharactersControl.getCharacter(selection);
-        System.out.println("display character paragraph");
+        this.console.println("display character paragraph");
         
     }
 

@@ -43,13 +43,13 @@ public class StartProgramView {
 
     private void displayBanner() {
         
-        System.out.println("\n\n***************************************");
+        this.console.println("\n\n***************************************");
         
-        System.out.println("*                                          *"
+        this.console.println("*                                          *"
                         + "\n*           Welcome to The Town.           "
                         + "\n*       A text based adventure game.       ");
         
-        System.out.println("*                                         *"
+        this.console.println("*                                         *"
                         + "\n* Temporarily marooned in a strange town, *"
                         + "\n* you must explore the surrounding areas  *"
                         + "\n* North, South, East, and West of town    *"
@@ -58,11 +58,11 @@ public class StartProgramView {
                         + "\n* Each time you play you have 1 hour      *"
                         + "\n* to complete the game.                   *");
         
-        System.out.println("*                                          *"
+        this.console.println("*                                          *"
                         + "\n*          Have fun adventuring!          *"
                         + "\n*                                         *");
         
-        System.out.println("\n\n****************************************");
+        this.console.println("\n\n****************************************");
     }
 
     private String getPlayersName() {
@@ -73,7 +73,7 @@ public class StartProgramView {
                 while(!valid) { //while a valid name has not been retrived
                     
                         //prompt for the players name
-                        System.out.println("Enter the characters name below:");
+                        this.console.println("Enter the characters name below:");
                         
                         //get the name from the keyboard and trim off the blanks
                         playersName = this.keyboard.readLine();
@@ -81,22 +81,22 @@ public class StartProgramView {
                         
                         //if the name is invalid
                         if (playersName.length() < 2) {
-                            System.out.println("Invalid name - the name must not be blank");
+                            ErrorView.display(this.getClass().getName(),"Invalid name - the name must not be blank");
                             continue; //and repeat again
                         }
                         break; //out of the repitition (exit)
                     }
                 } catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),"Error reading input: " + e.getMessage());
         }
                     return playersName; //return the name
                 }
 
     private void displayWelcomeMessage(Player player) {
-        System.out.println("\n\n====================================");
-        System.out.println("\tWelcome to the game, " + player.getName() + ("."));
-        System.out.println("\tEnjoy yourself.");
-        System.out.println("========================================");
+        this.console.println("\n\n====================================");
+        this.console.println("\tWelcome to the game, " + player.getName() + ("."));
+        this.console.println("\tEnjoy yourself.");
+        this.console.println("========================================");
     }
 
     public void display() {
