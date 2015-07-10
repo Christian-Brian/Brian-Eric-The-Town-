@@ -40,5 +40,20 @@ public class CalcWaterTankViewTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
+
+    /**
+     * Test of doAction method, of class CalcWaterTankView.
+     */
+    @Test
+    public void testDoAction() {
+        System.out.println("doAction");
+        Object obj = null;
+        CalcWaterTankView instance = null;
+        boolean expResult = false;
+        boolean result = instance.doAction(obj);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
     
 }

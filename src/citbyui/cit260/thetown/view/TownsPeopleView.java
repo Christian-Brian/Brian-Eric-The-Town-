@@ -132,7 +132,7 @@ public class TownsPeopleView extends View {
     private void displayWho(String selection) {
     //sort the array of charactes
     //go through each character get the name, and print the name
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Abraham, Alfred, Gordon, John, Mark, Rachael, and Wayne."); 
     }
 
 }

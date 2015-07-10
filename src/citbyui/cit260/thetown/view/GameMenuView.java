@@ -174,7 +174,8 @@ public class GameMenuView extends View {
     }
 
     private void calcVolumeOfCave() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        CalcVolumeOfCave volumeOfCave = new CalcVolumeOfCave("");
+        volumeOfCave.display();
     }
 
 }
