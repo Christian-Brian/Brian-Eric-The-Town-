@@ -6,6 +6,7 @@
 package citbyui.cit260.thetown.control;
 
 import citbyui.cit260.thetown.control.exceptions.MapControlException;
+import citbyui.cit260.thetown.model.Characters;
 import citbyui.cit260.thetown.model.Game;
 import citbyui.cit260.thetown.model.Locations;
 import citbyui.cit260.thetown.model.Map;
@@ -394,7 +395,17 @@ public class MapControl {
     
     // MapControl.moveCharactersToStartingLocation(map);
     public static void moveCharactersToStartingLocation(Map map) {
-        System.out.println("*** called moveCharactersToStartingLocation ***");
+        Locations[][] locations = map.getLocations();
+            // Mark(6,5), Adam(8,5), John(6,8), Wayne(8,8), Rachael(5,0), Selina(2,9), Abraham(13,9), Alfred(9,14), and Gordon(7,7)
+        locations[6][5].addCharacter(Characters.Mark);
+        locations[8][5].addCharacter(Characters.Adam);
+        locations[6][8].addCharacter(Characters.John);
+        locations[8][8].addCharacter(Characters.Wayne);
+        locations[5][0].addCharacter(Characters.Rachael);
+        locations[2][9].addCharacter(Characters.Selina);
+        locations[13][9].addCharacter(Characters.Abraham);
+        locations[9][14].addCharacter(Characters.Alfred);
+        locations[7][7].addCharacter(Characters.Gordon);
         return ;
     }
     

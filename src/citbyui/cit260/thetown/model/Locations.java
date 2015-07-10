@@ -113,5 +113,11 @@ public class Locations implements Serializable {
     public void setCharacters(ArrayList<Characters> characters) {
         this.characters = characters;
     }
-
+    
+    public void addCharacter(Characters character) {
+        if (this.characters == null) {
+           this.characters = new ArrayList<>();
+        }
+        this.characters.add(character);
+    }
 }
