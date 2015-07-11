@@ -6,7 +6,11 @@
 package citbyui.cit260.thetown.view;
 
 import citbyui.cit260.thetown.control.GameControl;
+import citbyui.cit260.thetown.model.Characters;
 import citbyui.cit260.thetown.model.Locations;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 import the.town.TheTown;
 
@@ -29,6 +33,7 @@ public class GameMenuView extends View {
                 + "\nWater Tank - display word problem"
                 + "\nCase - Case"
                 + "\nCave - Cave"
+                + "\nReport- Report Character Locations"
                 + "\nQuit - Quit game"
                 + "\n==================================");
 
@@ -97,14 +102,17 @@ public class GameMenuView extends View {
             case "restart": // restart game
                 this.restartGame();
                 break;
-            case "water": // restart game
+            case "water": // water
                 this.waterTank();
                 break;
-            case "case": // restart game
+            case "case": // case
                 this.caseCubeofABox();
                 break;
-            case "cave": // restart game
+            case "cave": // cave
                 this.calcVolumeOfCave();
+                break;
+            case "report": // report
+                this.reportCharacters();
                 break;
             case "quit": //exit program
                 return true;
@@ -176,6 +184,42 @@ public class GameMenuView extends View {
     private void calcVolumeOfCave() {
         CalcVolumeOfCave volumeOfCave = new CalcVolumeOfCave("");
         volumeOfCave.display();
+    }
+
+    private void reportCharacters() {
+        this.console.println("\n\nEnter the file path for file where the report "
+                + "is to be printed.");
+        String filePath = this.getInput();
+
+        try {
+            reportCharacters(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+}
+
+    }
+
+    public void reportCharacters(String filePath) {
+        try (PrintWriter out = new PrintWriter(filePath)) {
+
+            out.println("\n\n List of Characters      ");
+            out.printf("%n%-10s%10s", "Name", "Location");
+            out.printf("%n%-10s%10s", "----", "--------");
+            for (Locations[] row : TheTown.getCurrentGame().getMap().getLocations()) {
+                for (Locations loc : row) {
+                    ArrayList<Characters> people = loc.getCharacters();
+                    if (people != null) {
+                        for (Characters person : people) {
+                            out.printf("%n%-14s%2d,%2d", person, loc.getRow(), loc.getColumn());
+                            
+                        }
+                    }
+                }
+            }
+            this.console.println("It worked");
+        } catch (IOException e) {
+            ErrorView.display("MainMenuView", e.getMessage());
+        }
     }
 
 }
