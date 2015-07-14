@@ -101,7 +101,7 @@ public class CalcVolumeOfCave extends View {
             double waterTank = MapControl.calcVolumeOfCave(25.0, 30.0, 100.0);
 
             if (guess == waterTank) {
-                ResourcesControl.addToInventory(50, "gold");
+                ResourcesControl.addToInventory(50, GameControl.Item.gold);
                 this.console.println("You found the treasure. +50 gold to inventory.");
                 return true;
             } else {

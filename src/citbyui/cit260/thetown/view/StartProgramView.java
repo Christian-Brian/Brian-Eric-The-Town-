@@ -54,9 +54,7 @@ public class StartProgramView {
                         + "\n* you must explore the surrounding areas  *"
                         + "\n* North, South, East, and West of town    *"
                         + "\n* searching for resources and information *"
-                        + "\n* to help you leave town unharmed.        *"
-                        + "\n* Each time you play you have 1 hour      *"
-                        + "\n* to complete the game.                   *");
+                        + "\n* to help you leave town unharmed.        *");
         
         this.console.println("*                                          *"
                         + "\n*          Have fun adventuring!          *"

@@ -25,7 +25,10 @@ public class CalcCaseCubeofABox extends View {
                 + "\n=================================="
                 + "\n   Calculate Volume Of A Box  "
                 + "\n=================================="
-                + "\nYou enter a cave."
+                + "\nYou enter a cave. You must solve what"
+                + "\nthe volume of a cube is in cubic inches"
+                + "\nfor a cube 50ft on a side. Use two decimal"
+                + "\nplaces for your answer."
                 + "\n==================================");
 
     }
@@ -96,7 +99,7 @@ public class CalcCaseCubeofABox extends View {
         try {
             double caseCube = MapControl.calcCaseCubeofABox(50.0, 50.0, 50.0);
             if (guess == caseCube) {
-                ResourcesControl.addToInventory(50, "gold");
+                ResourcesControl.addToInventory(50, GameControl.Item.gold);
                 this.console.println("+50 gold to inventory.");
                 return true;
             } else {

@@ -5,27 +5,34 @@
  */
 package citbyui.cit260.thetown.control;
 
+import citbyui.cit260.thetown.control.GameControl.Item;
 import citbyui.cit260.thetown.model.Resources;
+import the.town.TheTown;
 
 /**
  *
- * @author Eric
+ * @author Eric and Brian
  */
 public class ResourcesControl {
-    public static int addToInventory(int amount, String type){
-        System.out.println("addToInventory stub function called");
-        return 0;
+    public static void addToInventory(int amount, Item type){
+        Resources[] inventoryList = TheTown.getCurrentGame().getInventory();
+        double currentAmount = inventoryList[type.ordinal()].getAmount();
+        double total = currentAmount + amount;
+        if (type == Item.gold && total > 100) total = 100;
+        if (type != Item.gold && total > 1) total = 1;
+        inventoryList[type.ordinal()].setAmount(total);
+    
     }
     
-    public static int addToInventory(int amount, String type, String character){
-        System.out.println("addToInventory stub function called");
-        return 0;
-    }
+//    public static int addToInventory(int amount, String type, String character){
+//        System.out.println("addToInventory stub function called");
+//        return 0;
+//    }
     
-    public static double calcCaseCube(double d, double d0, double d1) {
-        System.out.println("addToInventory stub function called");
-        return 0;
-    }
+//    public static double calcCaseCube(double d, double d0, double d1) {
+//        System.out.println("addToInventory stub function called");
+//        return 0;
+//    }
     
     public static int countInventoryItems(Resources[] inventory) {
     int count = 0;

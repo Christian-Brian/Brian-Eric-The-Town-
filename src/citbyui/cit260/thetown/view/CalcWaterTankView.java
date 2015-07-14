@@ -101,7 +101,7 @@ public class CalcWaterTankView extends View {
             double waterTank = MapControl.calcWaterTank(100.0, 10.0);
 
             if (guess == waterTank) {
-                ResourcesControl.addToInventory(50, "gold");
+                ResourcesControl.addToInventory(50, GameControl.Item.gold);
                 this.console.println("You found Poseidons crown. +50 gold to inventory.");
                 return true;
             } else {
