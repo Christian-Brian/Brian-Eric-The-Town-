@@ -25,10 +25,10 @@ public class CalcVolumeOfCave extends View {
                 + "\n=================================="
                 + "\n   Calculate Volume of cave Problem   "
                 + "\n=================================="
-                + "\nA water tank, having the shape of a rectangular prism of base 100"
-                + "\nsquare centimeters is being filled at the rate of 1 liter per minute."
-                + "\nFind the rate at which the height of the water in the water tank "
-                + "\nincreases. Express your answer as a whole number."
+                + "\nWhat is the case cube of a box: you will need to will need to do "
+                + "\n25*30*100=answer^3 divide the answer by 1728"
+                + "\nsince the measurement is in inches."
+                + "\nhints will be given."
                 + "\nQuit - go back"
                 + "\n==================================");
     }
@@ -105,9 +105,10 @@ public class CalcVolumeOfCave extends View {
                 this.console.println("You found the treasure. +50 gold to inventory.");
                 return true;
             } else {
-                ErrorView.display(this.getClass().getName(),"Your answer is incorrect. Try again.");
+                ErrorView.display(this.getClass().getName(),"Your answer is incorrect. Try again. Hint/answer: " + waterTank);
             }
 
+        
         } catch (MapControlException me) {
             this.console.println(me.getMessage());
         }

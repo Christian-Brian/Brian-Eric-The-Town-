@@ -10,6 +10,7 @@ package citbyui.cit260.thetown.view;
 
 
 import citbyui.cit260.thetown.control.CharactersControl;
+import citbyui.cit260.thetown.model.Characters;
 
 /**
  *
@@ -83,32 +84,32 @@ public class TownsPeopleView extends View {
         String selection = (String) obj;
         
         switch (selection) {
-            case "mary": //create and start a new game
-                this.displayTownsPeople(selection);
+            case "mark": //create and start a new game
+                this.displayTownsPeople(Characters.Mark);
                 break;
             case "adam": //continue existing game
-                this.displayTownsPeople(selection);
+                this.displayTownsPeople(Characters.Adam);
                 break;
             case "john": // display help menu
-                this.displayTownsPeople(selection);
+                this.displayTownsPeople(Characters.John);
                 break;
             case "wayne": // display help menu
-                this.displayTownsPeople(selection);
+                this.displayTownsPeople(Characters.Wayne);
                 break;
             case "rachael": // display help menu
-                this.displayTownsPeople(selection);
+                this.displayTownsPeople(Characters.Rachael);
                 break;
             case "selina": // display help menu
-                this.displayTownsPeople(selection);
+                this.displayTownsPeople(Characters.Selina);
                 break;
             case "abraham": // display help menu
-                this.displayTownsPeople(selection);
+                this.displayTownsPeople(Characters.Abraham);
                 break;
             case "alfred": // display help menu
-                this.displayTownsPeople(selection);
+                this.displayTownsPeople(Characters.Alfred);
                 break;
             case "gordon": // display help menu
-                this.displayTownsPeople(selection);
+                this.displayTownsPeople(Characters.Gordon);
                 break;
             case "who": // display help menu
                 this.displayWho(selection);
@@ -123,10 +124,11 @@ public class TownsPeopleView extends View {
     }
 
 
-    private void displayTownsPeople(String selection) {
-        Character character = CharactersControl.getCharacter(selection);
-        this.console.println("display character paragraph");
-        
+    private void displayTownsPeople(Characters characterNPC) {
+        //get NPC message
+        String NPCMessage = characterNPC.getDescription();
+        //display it to the user
+        this.console.println(NPCMessage);
     }
 
     private void displayWho(String selection) {

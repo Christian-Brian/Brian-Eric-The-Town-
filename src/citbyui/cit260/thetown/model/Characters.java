@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 public enum Characters implements Serializable {
 
-    //enim attributes
+    //enum attributes
 
     Mark("(north, but in town)(marks message:I heard you were looking to find "
             + "treasure in these mountains. I've searched for years and haven't"
@@ -57,6 +57,10 @@ public enum Characters implements Serializable {
     Gordon("Gordons message: There's not enough women in this town. Thats why "
             + "Abe and Alfred are leaving. To find more women. Whatever. Evens"
             + "out the ratio here.");
+
+    public static Character Character(String selection) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     //enim attributes
 //    private String name;
