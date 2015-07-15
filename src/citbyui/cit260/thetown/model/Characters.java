@@ -21,7 +21,7 @@ public enum Characters implements Serializable {
             + "got any richer. Take my shovel with you if you're gonna go look."
             + "Adam the goldsmith walks out there every day. Hind him if you need help"),
     Adam("(North, but in world) (World description:You look out and see a wide range of sagebrush"
-            + "in the forground against tall mointains. All the coulds seem to swirl around"
+            + "in the forground against tall mointains. All the clouds seem to swirl around"
             + "the tallest peak. There's animals in the distance. you've never seen before."
             + "It's gonna be a long walk to those mountains. I wonder where that goldsmith is."
             + "(adams message:I found treasure. Finally! Help me open it and you can have half."),
@@ -35,7 +35,8 @@ public enum Characters implements Serializable {
             + "ready to get beat.)"),
     Rachael("(South, but in town) Rachaels message: Not to far south of here is a pretty"
             + "incredible beach. I go and collect shells and dive for pearls and make"
-            + "jewelery with them. My friend Selina is out there right now."),
+            + "jewelery with them. My friend Selina is out there right now. You"
+            + "can have my old snorkel to go out there."),
     Selina("(South, but in world) (World description: Miles and miles of white sandy beach."
             + "Perfect waves crashing upon the shore line. Strange trees boarder the sand."
             + "The air is cooler over here. Why are people not here all the time?!"
