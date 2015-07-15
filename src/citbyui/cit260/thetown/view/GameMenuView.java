@@ -34,7 +34,6 @@ public class GameMenuView extends View {
                 + "\nCase - Case"
                 + "\nCave - Cave"
                 + "\nReport- Report Character Locations"
-                + "\nTable- prints a table of item locations"
                 + "\nQuit - Quit game"
                 + "\n==================================");
 
@@ -114,9 +113,6 @@ public class GameMenuView extends View {
                 break;
             case "report": // report
                 this.reportCharacters();
-                break;
-            case "table": // report
-                this.tableInventory();
                 break;
             case "quit": //exit program
                 return true;
@@ -214,40 +210,6 @@ public class GameMenuView extends View {
                     ArrayList<Characters> people = loc.getCharacters();
                     if (people != null) {
                         for (Characters person : people) {
-                            out.printf("%n%-14s%2d,%2d", person, loc.getRow(), loc.getColumn());
-                            
-                        }
-                    }
-                }
-            }
-            this.console.println("It worked");
-        } catch (IOException e) {
-            ErrorView.display("MainMenuView", e.getMessage());
-        }
-    }
-
-    private void tableInventory() {
-        this.console.println("\n\nEnter the file path for file where the report "
-                + "is to be printed.");
-        String filePath = this.getInput();
-
-        try {
-            tableInventory(filePath);
-        } catch (Exception ex) {
-            ErrorView.display("MainMenuView", ex.getMessage());
-}
-    }
-    public void tableInventory(String filePath) {
-        try (PrintWriter out = new PrintWriter(filePath)) {
-
-            out.println("\n\n List of items      ");
-            out.printf("%n%-10s%10s", "Name", "Location");
-            out.printf("%n%-10s%10s", "----", "--------");
-            for (Locations[] row : TheTown.getCurrentGame().getMap().getLocations()) {
-                for (Locations loc : row) {
-                    ArrayList<GameControl> item = loc.getCharacters();
-                    if (item != null) {
-                        for (GameControl person : item) {
                             out.printf("%n%-14s%2d,%2d", person, loc.getRow(), loc.getColumn());
                             
                         }

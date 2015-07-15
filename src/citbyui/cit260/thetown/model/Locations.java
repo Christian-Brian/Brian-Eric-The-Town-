@@ -5,7 +5,6 @@
  */
 package citbyui.cit260.thetown.model;
 
-import citbyui.cit260.thetown.control.GameControl;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -120,9 +119,5 @@ public class Locations implements Serializable {
            this.characters = new ArrayList<>();
         }
         this.characters.add(character);
-    }
-
-    public void moveItem(GameControl.Item item) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
