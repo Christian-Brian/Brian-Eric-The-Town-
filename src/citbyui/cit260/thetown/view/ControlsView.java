@@ -5,57 +5,69 @@
  */
 package citbyui.cit260.thetown.view;
 
+import citbyui.cit260.thetown.control.MapControl;
+import citbyui.cit260.thetown.model.Locations;
+import citbyui.cit260.thetown.model.Player;
+import the.town.TheTown;
+
 /**
  *
  * @author bchrist
  */
 public class ControlsView extends View {
-    
-    
 
-    public ControlsView(){     
+    public ControlsView() {
         super("\n"
-            + "\n=================================="
-            + "\n|           Controls              "
-            + "\n=================================="
-            + "\nNorth - Moves a space north"
-            + "\nSouth - Moves a space south"
-            + "\nEast - Moves a space east"
-            + "\nWest - Moves a space west"
-            + "\nQuit - Quit"
-            + "\n==================================");
-    
+                + "\n=================================="
+                + "\n|           Controls              "
+                + "\n=================================="
+                + "\nNorth - Moves a space north"
+                + "\nSouth - Moves a space south"
+                + "\nEast - Moves a space east"
+                + "\nWest - Moves a space west"
+                + "\nQuit - Quit"
+                + "\n==================================");
+
     }
-    
-    
+
     @Override
     public boolean doAction(Object obj) {
-        String selection = (String) obj; 
-        
+        String selection = (String) obj;
+
         switch (selection) {
-            case "north": //create and start a new game
+            case "north": //go north
                 this.goNorth();
                 break;
-            case "south": //continue existing game
+            case "south": //go south
                 this.goSouth();
                 break;
-            case "east": // display help menu
+            case "east": // go east
                 this.goEast();
                 break;
-            case "west": // display help menu
+            case "west": // go west
                 this.goWest();
                 break;
             case "quit": //exit program
                 return true;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection. Try Again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid Selection. Try Again");
                 break;
         }
         return false;
     }
 
     private void goNorth() {
-        this.console.println("goNorth function called");
+        //row -1, col
+        Player player = TheTown.getPlayer();
+        Locations location = player.getLocation();
+        int row = location.getRow();
+        int column = location.getColumn();
+        MapControl.movePlayerToLocation(player, row - 1, column);
+        int newRow = player.getLocation().getRow();
+        if (row == newRow) {
+            this.console.println("You can't go North.");
+        }
+        this.console.println("Location: [" + newRow + "][" + column + "]");
     }
 
     private void goSouth() {
@@ -69,4 +81,5 @@ public class ControlsView extends View {
     private void goEast() {
         this.console.println("goEast function called");
     }
-}    
+
+}

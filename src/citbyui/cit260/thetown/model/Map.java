@@ -14,8 +14,8 @@ import the.town.TheTown;
  * @author Eric
  */
 public class Map implements Serializable {
-    private double numberOfColumns;
-    private double numberOfRows;
+    private int numberOfColumns;
+    private int numberOfRows;
     private Locations[][] locations;
         
 
@@ -75,19 +75,19 @@ public class Map implements Serializable {
         return true;
     }
 
-    public double getNumberOfColumns() {
+    public int getNumberOfColumns() {
         return numberOfColumns;
     }
 
-    public void setNumberOfColumns(double numberOfColumns) {
+    public void setNumberOfColumns(int numberOfColumns) {
         this.numberOfColumns = numberOfColumns;
     }
 
-    public double getNumberOfRows() {
+    public int getNumberOfRows() {
         return numberOfRows;
     }
 
-    public void setNumberOfRows(double numberOfRows) {
+    public void setNumberOfRows(int numberOfRows) {
         this.numberOfRows = numberOfRows;
     }
     
