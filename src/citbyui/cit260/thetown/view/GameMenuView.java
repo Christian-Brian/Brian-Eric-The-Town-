@@ -26,6 +26,7 @@ public class GameMenuView extends View {
                 + "\n            Game Menu             "
                 + "\n=================================="
                 + "\nMap - Map"
+                + "\nControls-Enter to move player"
                 + "\nTown - Town"
                 + "\nInventory - Inventory"
                 + "\nHelp - Get help"
@@ -90,6 +91,9 @@ public class GameMenuView extends View {
             case "map": //display map
                 this.displayMap();
                 break;
+            case "controls": //create and start a new game
+                this.displayConrolsMenu();
+                break;
             case "town": //display town
                 this.displayTown();
                 break;
@@ -151,6 +155,11 @@ public class GameMenuView extends View {
     private void displayTown() {
         TownsPeopleView townsPeople = new TownsPeopleView();
         townsPeople.display();
+    }
+    
+    private void displayConrolsMenu() {
+        ControlsView controlsMenu = new ControlsView();
+         controlsMenu.display();
     }
 
     private void displayInventory() {

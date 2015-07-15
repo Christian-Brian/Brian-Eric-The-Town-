@@ -113,8 +113,8 @@ public class HelpMenuView extends View {
 
 
     private void displayConrolsMenu() {
-        ControlsView controlsMenu = new ControlsView();
-         controlsMenu.display();
+        this.console.println("To move the player in the map you need to go to the "
+                + "\ncontrols menu and type in either North, South, West, and East.");
     }
 
     private void displayMap() {

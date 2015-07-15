@@ -71,15 +71,15 @@ public class ControlsView extends View {
     }
 
     private void goSouth() {
-        this.console.println("goSouth function called");
+        //row +1, col
     }
 
     private void goWest() {
-        this.console.println("goWest function called");
+        //row, col -1
     }
 
     private void goEast() {
-        this.console.println("goEast function called");
+        //row, col +1
     }
 
 }
