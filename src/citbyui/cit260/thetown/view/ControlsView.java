@@ -72,14 +72,44 @@ public class ControlsView extends View {
 
     private void goSouth() {
         //row +1, col
+         Player player = TheTown.getPlayer();
+        Locations location = player.getLocation();
+        int row = location.getRow();
+        int column = location.getColumn();
+        MapControl.movePlayerToLocation(player, row + 1, column);
+        int newRow = player.getLocation().getRow();
+        if (row == newRow) {
+            this.console.println("You can't go South.");
+        }
+        this.console.println("Location: [" + newRow + "][" + column + "]");
     }
 
     private void goWest() {
         //row, col -1
+        Player player = TheTown.getPlayer();
+        Locations location = player.getLocation();
+        int row = location.getRow();
+        int column = location.getColumn();
+        MapControl.movePlayerToLocation(player, row , column - 1);
+        int newColumn = player.getLocation().getColumn();
+        if (column == newColumn) {
+            this.console.println("You can't go South.");
+        }
+        this.console.println("Location: [" + row + "][" + newColumn + "]");
     }
 
     private void goEast() {
         //row, col +1
+        Player player = TheTown.getPlayer();
+        Locations location = player.getLocation();
+        int row = location.getRow();
+        int column = location.getColumn();
+        MapControl.movePlayerToLocation(player, row , column + 1);
+        int newColumn = player.getLocation().getColumn();
+        if (column == newColumn) {
+            this.console.println("You can't go South.");
+        }
+        this.console.println("Location: [" + row + "][" + newColumn + "]");
     }
 
 }
