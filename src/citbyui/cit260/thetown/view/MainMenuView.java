@@ -92,7 +92,7 @@ public class MainMenuView extends View {
             case "quit": //exit program
                 return true;
             default:
-                ErrorView.display(this.getClass().getName(), "\n*** Invalid Selection. Try Again");
+                ErrorView.display(this.getClass().getName(), "\nInvalid Selection. Try Again");
                 break;
         }
         return false;

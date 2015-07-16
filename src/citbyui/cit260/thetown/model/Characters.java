@@ -38,10 +38,10 @@ public enum Characters implements Serializable {
             + "\ntraveled west farther than you can travel in the desert. "
             + "\nI've been trying my whole life to clear the mist. Alfred and I "
             + "\nare going to take another trip. Maybe for good."),
-    Alfred("(Alfreds message: Once we step into the mist i have no plans of "
+    Alfred("Once we step into the mist i have no plans of "
             + "\ncomming back to this town. We'll either break the mist or die out"
             + "\nthere. Take this extra cloak if you decide to adventure west.)"),
-    Gordon("Gordons message: There's not enough women in this town. Thats why "
+    Gordon("There's not enough women in this town. Thats why "
             + "\nAbe and Alfred are leaving. To find more women. Whatever. Evens "
             + "\nout the ratio here.");
 

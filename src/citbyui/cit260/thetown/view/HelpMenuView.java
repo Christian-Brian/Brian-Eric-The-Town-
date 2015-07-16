@@ -97,7 +97,7 @@ public class HelpMenuView extends View {
                 this.displayGameMenu();
                 return true;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection. Try Again");
+                ErrorView.display(this.getClass().getName(),"\nInvalid Selection. Try Again");
                 break;
         }
         return false;
@@ -137,18 +137,19 @@ public class HelpMenuView extends View {
 
     private void displayTown() {
         this.console.println("When you select the town you see a descripton of"
-                + "what is happening in town and who in town you can talk to.");
+                + "\nwhat is happening in town and who in town you can talk to.");
     }
 
     private void displayInventoryMenu() {
         this.console.println("You need to collect items in the game in order to"
-                + "progress through it. Selecting this option will show you the"
-                + "items you need and what you have already collected.");
+                + "'nprogress through it. Selecting this option will show you the"
+                + "\nitems you need and what you have already collected. You can"
+                + "\nalso see how much gold you have collected");
     }
 
     private void displayGameMenu() {
-    GameMenuView gameMenu = new GameMenuView();
-                gameMenu.display();    
+        this.console.println("Selecting this will take you back to the main menu"
+                + "\nof the game.");
     }
 }
 
