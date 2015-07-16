@@ -6,6 +6,7 @@
 package citbyui.cit260.thetown.view;
 
 import citbyui.cit260.thetown.control.GameControl;
+import citbyui.cit260.thetown.model.Locations;
 import java.util.Scanner;
 import the.town.TheTown;
 
@@ -118,11 +119,25 @@ public class HelpMenuView extends View {
     }
 
     private void displayMap() {
-        this.console.println("*** displayMap function called ***");
+    Locations[][] locations = TheTown.getCurrentGame().getMap().getLocations();
+            this.console.println("*** Welcome to TheTown ***");
+            this.console.println("  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |10 |11 |12 |13 |14 |");
+            for (int i = 0; i < locations.length; i++) {
+                this.console.println("--------------------------------------------------------------");
+                this.console.format("%2d", i);
+                for (int j = 0; j < locations[0].length; j++) {
+                    this.console.print("|");
+                    this.console.print(locations[i][j].getScene().getMapSymbol());
+
+                }
+                this.console.println("|");
+            } 
+            this.console.println("--------------------------------------------------------------");    
     }
 
     private void displayTown() {
-        this.console.println("*** displayTown function called ***");
+        TownsPeopleView townsPeople = new TownsPeopleView();
+        townsPeople.display();
     }
 
     private void displayInventoryMenu() {

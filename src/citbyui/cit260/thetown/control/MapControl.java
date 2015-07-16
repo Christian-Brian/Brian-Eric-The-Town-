@@ -397,15 +397,26 @@ public class MapControl {
     public static void moveCharactersToStartingLocation(Map map) {
         Locations[][] locations = map.getLocations();
             // Mark(6,5), Adam(8,5), John(6,8), Wayne(8,8), Rachael(5,0), Selina(2,9), Abraham(13,9), Alfred(9,14), and Gordon(7,7)
-        locations[6][5].addCharacter(Characters.Mark);
-        locations[8][5].addCharacter(Characters.Adam);
-        locations[6][8].addCharacter(Characters.John);
-        locations[8][8].addCharacter(Characters.Wayne);
-        locations[5][0].addCharacter(Characters.Rachael);
-        locations[2][9].addCharacter(Characters.Selina);
-        locations[13][9].addCharacter(Characters.Abraham);
-        locations[9][14].addCharacter(Characters.Alfred);
-        locations[7][7].addCharacter(Characters.Gordon);
+        locations[9][6].addCharacter(Characters.Mark);
+        locations[8][2].addCharacter(Characters.Adam);
+        locations[6][7].addCharacter(Characters.John);
+        locations[5][8].addCharacter(Characters.Wayne);
+        locations[7][8].addCharacter(Characters.Rachael);
+        locations[6][12].addCharacter(Characters.Selina);
+        locations[7][7].addCharacter(Characters.Abraham);
+        locations[9][9].addCharacter(Characters.Alfred);
+        locations[8][5].addCharacter(Characters.Gordon);
+        return ;
+    }
+    
+    public static void moveItemsToStartingLocation(Map map) {
+        Locations[][] locations = map.getLocations();
+            //
+        locations[9][6].moveItem(GameControl.Item.shovel);
+        locations[5][8].moveItem(GameControl.Item.badge);
+        locations[7][8].moveItem(GameControl.Item.snorkel);
+        locations[9][9].moveItem(GameControl.Item.cloak);
+        locations[9][9].moveItem(GameControl.Item.gold);
         return ;
     }
     
