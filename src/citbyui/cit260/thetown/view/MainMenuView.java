@@ -15,18 +15,18 @@ import the.town.TheTown;
  */
 public class MainMenuView extends View {
 
-    public MainMenuView(){     
+    public MainMenuView() {
         super("\n"
-            + "\n=================================="
-            + "\n            Main Menu             "
-            + "\n=================================="
-            + "\nStart - Start game"
-            + "\nContinue - Continue game"
-            + "\nHelp - Get help"
-            + "\nSave - Save game"
-            + "\nQuit - Quit game"
-            + "\n==================================");
-    
+                + "\n=================================="
+                + "\n            Main Menu             "
+                + "\n=================================="
+                + "\nStart - Start game"
+                + "\nContinue - Continue game"
+                + "\nHelp - Get help"
+                + "\nSave - Save game"
+                + "\nQuit - Quit game"
+                + "\n==================================");
+
 //    public void displayMenu() {
 //        
 //        String selection = " ";
@@ -72,10 +72,10 @@ public class MainMenuView extends View {
 //                    return menuSelection; //return the name
     }
 
-     @Override
+    @Override
     public boolean doAction(Object obj) {
-        String selection = (String) obj; 
-        
+        String selection = (String) obj;
+
         switch (selection) {
             case "start": //create and start a new game
                 this.startNewGame();
@@ -88,30 +88,35 @@ public class MainMenuView extends View {
                 break;
             case "save": // save game
                 this.saveCurrentGame();
-                break;    
+                break;
             case "quit": //exit program
                 return true;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection. Try Again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid Selection. Try Again");
                 break;
         }
         return false;
     }
 
     private void startNewGame() {
+
+        boolean startOver;
+        do {
             //create a new game
-        GameControl.createNewGame(TheTown.getPlayer());
-        
+            GameControl.createNewGame(TheTown.getPlayer());
+
             //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+            GameMenuView gameMenu = new GameMenuView();
+            gameMenu.display();
+            startOver = gameMenu.getRestart();
+        } while (startOver);
     }
 
     private void startExistingGame() {
-        this.console.println("\n\nEnter the file path for file where the game " 
-                             + "is to be saved.");   
+        this.console.println("\n\nEnter the file path for file where the game "
+                + "is to be saved.");
         String filePath = this.getInput();
-        
+
         try {
             GameControl.getExistingGame(filePath);
         } catch (Exception ex) {
@@ -125,12 +130,12 @@ public class MainMenuView extends View {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
-    
+
     private void saveCurrentGame() {
-        this.console.println("\n\nEnter the file path for file where the game " 
-                             + "is to be saved.");
+        this.console.println("\n\nEnter the file path for file where the game "
+                + "is to be saved.");
         String filePath = this.getInput();
-        
+
         try {
             GameControl.saveGame(TheTown.getCurrentGame(), filePath);
         } catch (Exception ex) {

@@ -5,9 +5,15 @@
  */
 package citbyui.cit260.thetown.view;
 
+import citbyui.cit260.thetown.control.GameControl;
+import citbyui.cit260.thetown.control.GameControl.Item;
 import citbyui.cit260.thetown.control.MapControl;
+import citbyui.cit260.thetown.control.ResourcesControl;
+import citbyui.cit260.thetown.model.Characters;
 import citbyui.cit260.thetown.model.Locations;
 import citbyui.cit260.thetown.model.Player;
+import citbyui.cit260.thetown.model.Resources;
+import java.util.ArrayList;
 import the.town.TheTown;
 
 /**
@@ -53,6 +59,7 @@ public class ControlsView extends View {
                 ErrorView.display(this.getClass().getName(), "\n*** Invalid Selection. Try Again");
                 break;
         }
+        displayInfo();
         return false;
     }
 
@@ -67,12 +74,12 @@ public class ControlsView extends View {
         if (row == newRow) {
             this.console.println("You can't go North.");
         }
-        this.console.println("Location: [" + newRow + "][" + column + "]");
+        //this.console.println("Location: [" + newRow + "][" + column + "]");
     }
 
     private void goSouth() {
         //row +1, col
-         Player player = TheTown.getPlayer();
+        Player player = TheTown.getPlayer();
         Locations location = player.getLocation();
         int row = location.getRow();
         int column = location.getColumn();
@@ -81,7 +88,7 @@ public class ControlsView extends View {
         if (row == newRow) {
             this.console.println("You can't go South.");
         }
-        this.console.println("Location: [" + newRow + "][" + column + "]");
+        //this.console.println("Location: [" + newRow + "][" + column + "]");
     }
 
     private void goWest() {
@@ -90,12 +97,12 @@ public class ControlsView extends View {
         Locations location = player.getLocation();
         int row = location.getRow();
         int column = location.getColumn();
-        MapControl.movePlayerToLocation(player, row , column - 1);
+        MapControl.movePlayerToLocation(player, row, column - 1);
         int newColumn = player.getLocation().getColumn();
         if (column == newColumn) {
             this.console.println("You can't go South.");
         }
-        this.console.println("Location: [" + row + "][" + newColumn + "]");
+        //this.console.println("Location: [" + row + "][" + newColumn + "]");
     }
 
     private void goEast() {
@@ -104,12 +111,71 @@ public class ControlsView extends View {
         Locations location = player.getLocation();
         int row = location.getRow();
         int column = location.getColumn();
-        MapControl.movePlayerToLocation(player, row , column + 1);
+        MapControl.movePlayerToLocation(player, row, column + 1);
         int newColumn = player.getLocation().getColumn();
         if (column == newColumn) {
             this.console.println("You can't go South.");
         }
-        this.console.println("Location: [" + row + "][" + newColumn + "]");
+        //this.console.println("Location: [" + row + "][" + newColumn + "]");
     }
 
+    public void displayInfo() {
+        Player player = TheTown.getPlayer();
+        Locations location = player.getLocation();
+        this.console.println("Location: [" + location.getRow() + "]["
+                + location.getColumn() + "]");
+        this.console.println("Scene: " + location.getScene().getDescription());
+        if (location.getAmount() > 0) {
+            double amount = location.getAmount();
+            Resources[] inventory = TheTown.getCurrentGame().getInventory();
+            switch (location.getScene().getResourceType()) {
+                case "":
+                    ResourcesControl.addToInventory(amount, GameControl.Item.gold);
+                    this.console.println("You got " + amount + " gold.");
+                    break;
+                case "Cloak":
+                    if (inventory[Item.cloak.ordinal()].getAmount() > 0) {
+                        ResourcesControl.addToInventory(amount, GameControl.Item.gold);
+                        this.console.println("You got " + amount + " gold.");
+                    } else {
+                        this.console.println("You need the cloak to get the gold.");
+                    }
+                    break;
+                case "Shovel":
+                    if (inventory[Item.shovel.ordinal()].getAmount() > 0) {
+                        ResourcesControl.addToInventory(amount, GameControl.Item.gold);
+                        this.console.println("You got " + amount + " gold.");
+                    } else {
+                        this.console.println("You need the shovel to get the gold.");
+                    }
+                    break;
+                case "Snorkel":
+                    if (inventory[Item.snorkel.ordinal()].getAmount() > 0) {
+                        ResourcesControl.addToInventory(amount, GameControl.Item.gold);
+                        this.console.println("You got " + amount + " gold.");
+                    } else {
+                        this.console.println("You need the snorkel to get the gold.");
+                    }
+                    break;
+                case "Badge":
+                    if (inventory[Item.badge.ordinal()].getAmount() > 0) {
+                        ResourcesControl.addToInventory(amount, GameControl.Item.gold);
+                        this.console.println("You got " + amount + " gold.");
+                    } else {
+                        this.console.println("You need the badge to get the gold.");
+                    }
+                    break;
+            }
+        }
+        displayNPCMessage(location);
+    }
+
+    private void displayNPCMessage(Locations location) {
+        ArrayList<Characters> characters = location.getCharacters();
+        if (characters != null) {
+            for (Characters npc : characters) {
+                this.console.println("Message: " + npc.getDescription());
+            }
+        }
+    }
 }

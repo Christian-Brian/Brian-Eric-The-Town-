@@ -14,7 +14,7 @@ import the.town.TheTown;
  * @author Eric and Brian
  */
 public class ResourcesControl {
-    public static void addToInventory(int amount, Item type){
+    public static void addToInventory(double amount, Item type){
         Resources[] inventoryList = TheTown.getCurrentGame().getInventory();
         double currentAmount = inventoryList[type.ordinal()].getAmount();
         double total = currentAmount + amount;

@@ -20,6 +20,8 @@ import the.town.TheTown;
  */
 public class GameMenuView extends View {
 
+    private boolean restart;
+
     public GameMenuView() {
         super("\n"
                 + "\n=================================="
@@ -37,6 +39,7 @@ public class GameMenuView extends View {
                 + "\nReport- Report Character Locations"
                 + "\nQuit - Quit game"
                 + "\n==================================");
+        restart = false;
 
 //    public void displayMenu() {
 //        
@@ -83,6 +86,10 @@ public class GameMenuView extends View {
 //                    return menuSelection; //return the name
     }
 
+    public boolean getRestart() {
+        return restart;
+    }
+
     @Override
     public boolean doAction(Object obj) {
         String selection = (String) obj;
@@ -105,7 +112,7 @@ public class GameMenuView extends View {
                 break;
             case "restart": // restart game
                 this.restartGame();
-                break;
+                return true;
             case "water": // water
                 this.waterTank();
                 break;
@@ -121,7 +128,7 @@ public class GameMenuView extends View {
             case "quit": //exit program
                 return true;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection. Try Again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid Selection. Try Again");
                 break;
         }
         return false;
@@ -145,10 +152,10 @@ public class GameMenuView extends View {
             for (int j = 0; j < locations[0].length; j++) {
                 this.console.print("|");
                 this.console.print(locations[i][j].getScene().getMapSymbol());
-               
+
             }
             this.console.println("|");
-        } 
+        }
         this.console.println("--------------------------------------------------------------");
     }
 
@@ -156,10 +163,11 @@ public class GameMenuView extends View {
         TownsPeopleView townsPeople = new TownsPeopleView();
         townsPeople.display();
     }
-    
+
     private void displayConrolsMenu() {
         ControlsView controlsMenu = new ControlsView();
-         controlsMenu.display();
+        controlsMenu.displayInfo();
+        controlsMenu.display();
     }
 
     private void displayInventory() {
@@ -175,7 +183,7 @@ public class GameMenuView extends View {
     }
 
     private void restartGame() {
-        this.console.println("*** restartGame stub function called ***");
+        restart = true;
     }
 
     private void waterTank() {
@@ -204,7 +212,7 @@ public class GameMenuView extends View {
             reportCharacters(filePath);
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
-}
+        }
 
     }
 
@@ -220,7 +228,7 @@ public class GameMenuView extends View {
                     if (people != null) {
                         for (Characters person : people) {
                             out.printf("%n%-14s%2d,%2d", person, loc.getRow(), loc.getColumn());
-                            
+
                         }
                     }
                 }
