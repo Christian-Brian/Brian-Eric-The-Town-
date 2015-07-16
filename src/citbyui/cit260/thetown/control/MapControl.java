@@ -417,6 +417,13 @@ public class MapControl {
         locations[9][9].moveItem(GameControl.Item.gold);
         return ;
     }
+    
+    public static void setGoldInLocaion(Map map) {
+        Locations[][] locations = map.getLocations();
+            //
+        locations[9][6].setAmount(GameControl.Item.gold);
+        return ;
+    }
 
     public enum SceneType {
 

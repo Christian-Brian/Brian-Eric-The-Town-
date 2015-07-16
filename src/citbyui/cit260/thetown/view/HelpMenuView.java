@@ -136,18 +136,19 @@ public class HelpMenuView extends View {
     }
 
     private void displayTown() {
-        TownsPeopleView townsPeople = new TownsPeopleView();
-        townsPeople.display();
+        this.console.println("When you select the town you see a descripton of"
+                + "what is happening in town and who in town you can talk to.");
     }
 
     private void displayInventoryMenu() {
-       InventoryMenuView inventoryMenu = new InventoryMenuView();
-        inventoryMenu.display();
+        this.console.println("You need to collect items in the game in order to"
+                + "progress through it. Selecting this option will show you the"
+                + "items you need and what you have already collected.");
     }
 
     private void displayGameMenu() {
-        this.console.println("*** displayGameMenu function called ***");
+    GameMenuView gameMenu = new GameMenuView();
+                gameMenu.display();    
     }
-    
 }
 
