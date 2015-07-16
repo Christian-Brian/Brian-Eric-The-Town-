@@ -5,68 +5,177 @@
  */
 package citbyui.cit260.thetown.view;
 
+import citbyui.cit260.thetown.control.GameControl;
+import citbyui.cit260.thetown.control.GameControl.Item;
+import citbyui.cit260.thetown.control.MapControl;
+import citbyui.cit260.thetown.control.ResourcesControl;
+import citbyui.cit260.thetown.model.Characters;
+import citbyui.cit260.thetown.model.Locations;
+import citbyui.cit260.thetown.model.Player;
+import citbyui.cit260.thetown.model.Resources;
+import java.util.ArrayList;
+import the.town.TheTown;
+
 /**
  *
  * @author bchrist
  */
 public class ControlsView extends View {
-    
-    
 
-    public ControlsView(){     
+    public ControlsView() {
         super("\n"
-            + "\n=================================="
-            + "\n|           Controls              "
-            + "\n=================================="
-            + "\nNorth - Moves a space north"
-            + "\nSouth - Moves a space south"
-            + "\nEast - Moves a space east"
-            + "\nWest - Moves a space west"
-            + "\nQuit - Quit"
-            + "\n==================================");
-    
+                + "\n=================================="
+                + "\n|           Controls              "
+                + "\n=================================="
+                + "\nNorth - Moves a space north"
+                + "\nSouth - Moves a space south"
+                + "\nEast - Moves a space east"
+                + "\nWest - Moves a space west"
+                + "\nQuit - Quit"
+                + "\n==================================");
+
     }
-    
-    
+
     @Override
     public boolean doAction(Object obj) {
-        String selection = (String) obj; 
-        
+        String selection = (String) obj;
+
         switch (selection) {
-            case "north": //create and start a new game
+            case "north": //go north
                 this.goNorth();
                 break;
-            case "south": //continue existing game
+            case "south": //go south
                 this.goSouth();
                 break;
-            case "east": // display help menu
+            case "east": // go east
                 this.goEast();
                 break;
-            case "west": // display help menu
+            case "west": // go west
                 this.goWest();
                 break;
             case "quit": //exit program
                 return true;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection. Try Again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid Selection. Try Again");
                 break;
         }
+        displayInfo();
         return false;
     }
 
     private void goNorth() {
-        this.console.println("goNorth function called");
+        //row -1, col
+        Player player = TheTown.getPlayer();
+        Locations location = player.getLocation();
+        int row = location.getRow();
+        int column = location.getColumn();
+        MapControl.movePlayerToLocation(player, row - 1, column);
+        int newRow = player.getLocation().getRow();
+        if (row == newRow) {
+            this.console.println("You can't go North.");
+        }
+        //this.console.println("Location: [" + newRow + "][" + column + "]");
     }
 
     private void goSouth() {
-        this.console.println("goSouth function called");
+        //row +1, col
+        Player player = TheTown.getPlayer();
+        Locations location = player.getLocation();
+        int row = location.getRow();
+        int column = location.getColumn();
+        MapControl.movePlayerToLocation(player, row + 1, column);
+        int newRow = player.getLocation().getRow();
+        if (row == newRow) {
+            this.console.println("You can't go South.");
+        }
+        //this.console.println("Location: [" + newRow + "][" + column + "]");
     }
 
     private void goWest() {
-        this.console.println("goWest function called");
+        //row, col -1
+        Player player = TheTown.getPlayer();
+        Locations location = player.getLocation();
+        int row = location.getRow();
+        int column = location.getColumn();
+        MapControl.movePlayerToLocation(player, row, column - 1);
+        int newColumn = player.getLocation().getColumn();
+        if (column == newColumn) {
+            this.console.println("You can't go South.");
+        }
+        //this.console.println("Location: [" + row + "][" + newColumn + "]");
     }
 
     private void goEast() {
-        this.console.println("goEast function called");
+        //row, col +1
+        Player player = TheTown.getPlayer();
+        Locations location = player.getLocation();
+        int row = location.getRow();
+        int column = location.getColumn();
+        MapControl.movePlayerToLocation(player, row, column + 1);
+        int newColumn = player.getLocation().getColumn();
+        if (column == newColumn) {
+            this.console.println("You can't go South.");
+        }
+        //this.console.println("Location: [" + row + "][" + newColumn + "]");
     }
-}    
+
+    public void displayInfo() {
+        Player player = TheTown.getPlayer();
+        Locations location = player.getLocation();
+        this.console.println("Location: [" + location.getRow() + "]["
+                + location.getColumn() + "]");
+        this.console.println("Scene: " + location.getScene().getDescription());
+        if (location.getAmount() > 0) {
+            double amount = location.getAmount();
+            Resources[] inventory = TheTown.getCurrentGame().getInventory();
+            switch (location.getScene().getResourceType()) {
+                case "":
+                    ResourcesControl.addToInventory(amount, GameControl.Item.gold);
+                    this.console.println("You got " + amount + " gold.");
+                    break;
+                case "Cloak":
+                    if (inventory[Item.cloak.ordinal()].getAmount() > 0) {
+                        ResourcesControl.addToInventory(amount, GameControl.Item.gold);
+                        this.console.println("You got " + amount + " gold.");
+                    } else {
+                        this.console.println("You need the cloak to get the gold.");
+                    }
+                    break;
+                case "Shovel":
+                    if (inventory[Item.shovel.ordinal()].getAmount() > 0) {
+                        ResourcesControl.addToInventory(amount, GameControl.Item.gold);
+                        this.console.println("You got " + amount + " gold.");
+                    } else {
+                        this.console.println("You need the shovel to get the gold.");
+                    }
+                    break;
+                case "Snorkel":
+                    if (inventory[Item.snorkel.ordinal()].getAmount() > 0) {
+                        ResourcesControl.addToInventory(amount, GameControl.Item.gold);
+                        this.console.println("You got " + amount + " gold.");
+                    } else {
+                        this.console.println("You need the snorkel to get the gold.");
+                    }
+                    break;
+                case "Badge":
+                    if (inventory[Item.badge.ordinal()].getAmount() > 0) {
+                        ResourcesControl.addToInventory(amount, GameControl.Item.gold);
+                        this.console.println("You got " + amount + " gold.");
+                    } else {
+                        this.console.println("You need the badge to get the gold.");
+                    }
+                    break;
+            }
+        }
+        displayNPCMessage(location);
+    }
+
+    private void displayNPCMessage(Locations location) {
+        ArrayList<Characters> characters = location.getCharacters();
+        if (characters != null) {
+            for (Characters npc : characters) {
+                this.console.println("Message: " + npc.getDescription());
+            }
+        }
+    }
+}

@@ -10,6 +10,7 @@ import citbyui.cit260.thetown.model.Characters;
 import citbyui.cit260.thetown.model.Game;
 import citbyui.cit260.thetown.model.Locations;
 import citbyui.cit260.thetown.model.Map;
+import citbyui.cit260.thetown.model.Player;
 import citbyui.cit260.thetown.model.Scene;
 import the.town.TheTown;
 
@@ -22,13 +23,13 @@ public class MapControl {
     public static double calcVolumeOfCave(double topRadius, double midRadius, double height) throws MapControlException {
 
         if (height < 1 || height > 150) {
-            throw new MapControlException("Incorrect height, " 
-                    + height +" it must be between 1 and 150.");
+            throw new MapControlException("Incorrect height, "
+                    + height + " it must be between 1 and 150.");
         }
 
         if (topRadius < 1 || topRadius > 50) {
-            throw new MapControlException("Incorrect top radius, " 
-                    + topRadius +" it must be between 1 and 50.");
+            throw new MapControlException("Incorrect top radius, "
+                    + topRadius + " it must be between 1 and 50.");
         }
 
         if (midRadius < topRadius) {
@@ -36,8 +37,8 @@ public class MapControl {
         }
 
         if (midRadius < 10 || midRadius > 45) {
-            throw new MapControlException("Incorrect mid radius, " 
-                    + midRadius +" it must be between 10 and 45.");
+            throw new MapControlException("Incorrect mid radius, "
+                    + midRadius + " it must be between 10 and 45.");
         }
 
         double volume = height * Math.PI * ((2 * Math.pow(midRadius, 2) + Math.pow(topRadius, 2)) / 3);
@@ -50,12 +51,12 @@ public class MapControl {
     public static double calcWaterTank(double areaOfBase, double fillRate) throws MapControlException {
 
         if (areaOfBase > 101 || areaOfBase < 99) {
-            throw new MapControlException("Incorrect area of base, " 
+            throw new MapControlException("Incorrect area of base, "
                     + areaOfBase + " it must be between 99 and 101.");
         }
 
         if (fillRate > 10 || fillRate < 9) {
-            throw new MapControlException("Incorrect fill rate, " 
+            throw new MapControlException("Incorrect fill rate, "
                     + fillRate + " it must be between 9 and 10.");
         }
         double volume = fillRate;
@@ -69,17 +70,17 @@ public class MapControl {
     public static double calcCaseCubeofABox(double height, double width, double length) throws MapControlException {
 
         if (height < 1 || height > 100) {
-            throw new MapControlException("Incorrect height, " 
+            throw new MapControlException("Incorrect height, "
                     + height + " it must be between 1 and 100.");
         }
 
         if (width < 1 || width > 100) {
-            throw new MapControlException("Incorrect width, " 
+            throw new MapControlException("Incorrect width, "
                     + width + " it must be between 1 and 100.");
         }
 
         if (length < 1 || length > 100) {
-            throw new MapControlException("Incorrect length, " 
+            throw new MapControlException("Incorrect length, "
                     + length + " it must be between 1 and 100.");
         }
 
@@ -99,10 +100,9 @@ public class MapControl {
         return map;
     }
 
-    
     public static void assignScenesToLocations(Map map, Scene[] scenes) {
         Locations[][] locations = map.getLocations();
-        
+
         locations[0][0].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[0][2].setScene(scenes[SceneType.Blocked.ordinal()]);
@@ -118,7 +118,7 @@ public class MapControl {
         locations[0][12].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[0][13].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[0][14].setScene(scenes[SceneType.Blocked.ordinal()]);
-        
+
         locations[1][0].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[1][1].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[1][2].setScene(scenes[SceneType.Blocked.ordinal()]);
@@ -134,7 +134,7 @@ public class MapControl {
         locations[1][12].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[1][13].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[1][14].setScene(scenes[SceneType.Blocked.ordinal()]);
-        
+
         locations[2][0].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[2][1].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[2][2].setScene(scenes[SceneType.Blocked.ordinal()]);
@@ -150,7 +150,7 @@ public class MapControl {
         locations[2][12].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[2][13].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[2][14].setScene(scenes[SceneType.Blocked.ordinal()]);
-        
+
         locations[3][0].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[3][1].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[3][2].setScene(scenes[SceneType.Blocked.ordinal()]);
@@ -166,7 +166,7 @@ public class MapControl {
         locations[3][12].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[3][13].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[3][14].setScene(scenes[SceneType.Blocked.ordinal()]);
-        
+
         locations[4][0].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[4][1].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[4][2].setScene(scenes[SceneType.Blocked.ordinal()]);
@@ -182,7 +182,7 @@ public class MapControl {
         locations[4][12].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[4][13].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[4][14].setScene(scenes[SceneType.Blocked.ordinal()]);
-        
+
         locations[5][0].setScene(scenes[SceneType.Mist.ordinal()]);
         locations[5][1].setScene(scenes[SceneType.Mist.ordinal()]);
         locations[5][2].setScene(scenes[SceneType.Mist.ordinal()]);
@@ -198,7 +198,7 @@ public class MapControl {
         locations[5][12].setScene(scenes[SceneType.Desert.ordinal()]);
         locations[5][13].setScene(scenes[SceneType.Desert.ordinal()]);
         locations[5][14].setScene(scenes[SceneType.Desert.ordinal()]);
-        
+
         locations[6][0].setScene(scenes[SceneType.Mist.ordinal()]);
         locations[6][1].setScene(scenes[SceneType.Mist.ordinal()]);
         locations[6][2].setScene(scenes[SceneType.Mist.ordinal()]);
@@ -214,7 +214,7 @@ public class MapControl {
         locations[6][12].setScene(scenes[SceneType.Desert.ordinal()]);
         locations[6][13].setScene(scenes[SceneType.Desert.ordinal()]);
         locations[6][14].setScene(scenes[SceneType.Desert.ordinal()]);
-        
+
         locations[7][0].setScene(scenes[SceneType.Mist.ordinal()]);
         locations[7][1].setScene(scenes[SceneType.Mist.ordinal()]);
         locations[7][2].setScene(scenes[SceneType.Mist.ordinal()]);
@@ -230,7 +230,7 @@ public class MapControl {
         locations[7][12].setScene(scenes[SceneType.Desert.ordinal()]);
         locations[7][13].setScene(scenes[SceneType.Desert.ordinal()]);
         locations[7][14].setScene(scenes[SceneType.Desert.ordinal()]);
-        
+
         locations[8][0].setScene(scenes[SceneType.Mist.ordinal()]);
         locations[8][1].setScene(scenes[SceneType.Mist.ordinal()]);
         locations[8][2].setScene(scenes[SceneType.Mist.ordinal()]);
@@ -246,7 +246,7 @@ public class MapControl {
         locations[8][12].setScene(scenes[SceneType.Desert.ordinal()]);
         locations[8][13].setScene(scenes[SceneType.Desert.ordinal()]);
         locations[8][14].setScene(scenes[SceneType.Desert.ordinal()]);
-        
+
         locations[9][0].setScene(scenes[SceneType.Mist.ordinal()]);
         locations[9][1].setScene(scenes[SceneType.Mist.ordinal()]);
         locations[9][2].setScene(scenes[SceneType.Mist.ordinal()]);
@@ -262,7 +262,7 @@ public class MapControl {
         locations[9][12].setScene(scenes[SceneType.Desert.ordinal()]);
         locations[9][13].setScene(scenes[SceneType.Desert.ordinal()]);
         locations[9][14].setScene(scenes[SceneType.Desert.ordinal()]);
-        
+
         locations[10][0].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[10][1].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[10][2].setScene(scenes[SceneType.Blocked.ordinal()]);
@@ -278,7 +278,7 @@ public class MapControl {
         locations[10][12].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[10][13].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[10][14].setScene(scenes[SceneType.Blocked.ordinal()]);
-        
+
         locations[11][0].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[11][1].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[11][2].setScene(scenes[SceneType.Blocked.ordinal()]);
@@ -294,7 +294,7 @@ public class MapControl {
         locations[11][12].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[11][13].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[11][14].setScene(scenes[SceneType.Blocked.ordinal()]);
-        
+
         locations[12][0].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[12][1].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[12][2].setScene(scenes[SceneType.Blocked.ordinal()]);
@@ -310,7 +310,7 @@ public class MapControl {
         locations[12][12].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[12][13].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[12][14].setScene(scenes[SceneType.Blocked.ordinal()]);
-        
+
         locations[13][0].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[13][1].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[13][2].setScene(scenes[SceneType.Blocked.ordinal()]);
@@ -326,7 +326,7 @@ public class MapControl {
         locations[13][12].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[13][13].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[13][14].setScene(scenes[SceneType.Blocked.ordinal()]);
-        
+
         locations[14][0].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[14][1].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[14][2].setScene(scenes[SceneType.Blocked.ordinal()]);
@@ -342,57 +342,55 @@ public class MapControl {
         locations[14][12].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[14][13].setScene(scenes[SceneType.Blocked.ordinal()]);
         locations[14][14].setScene(scenes[SceneType.Blocked.ordinal()]);
-        
-        
+
         return;
     }
 
-   private static Scene[] createScenes() {
-        
+    private static Scene[] createScenes() {
+
         Game game = TheTown.getCurrentGame();
-        
+
         Scene[] scenes = new Scene[SceneType.values().length];
-        
+
         Scene townScene = new Scene();
         townScene.setDescription("Welcome to the Town");
         townScene.setMapSymbol(" $ ");
         townScene.setResourceType("");
         scenes[SceneType.Town.ordinal()] = townScene;
-        
+
         Scene mountainScene = new Scene();
         mountainScene.setDescription("Welcome to the Mountain");
         mountainScene.setMapSymbol(" ^ ");
         mountainScene.setResourceType("Shovel");
         scenes[SceneType.Mountain.ordinal()] = mountainScene;
-        
+
         Scene beachScene = new Scene();
         beachScene.setDescription("Welcome to the Beach");
         beachScene.setMapSymbol(" ~ ");
         beachScene.setResourceType("Snorkel");
         scenes[SceneType.Beach.ordinal()] = beachScene;
-        
+
         Scene desertScene = new Scene();
         desertScene.setDescription("Welcome to the Desert");
         desertScene.setMapSymbol(" # ");
         desertScene.setResourceType("Badge");
         scenes[SceneType.Desert.ordinal()] = desertScene;
-        
+
         Scene mistScene = new Scene();
         mistScene.setDescription("Welcome to the Mist");
         mistScene.setMapSymbol(" % ");
         mistScene.setResourceType("Cloak");
         scenes[SceneType.Mist.ordinal()] = mistScene;
-        
+
         Scene blockedScene = new Scene();
         blockedScene.setDescription("Blocked");
         blockedScene.setMapSymbol(" * ");
         blockedScene.setResourceType("");
         scenes[SceneType.Blocked.ordinal()] = blockedScene;
-    
+
         return scenes;
-   }
-   
-    
+    }
+
     // MapControl.moveCharactersToStartingLocation(map);
     public static void moveCharactersToStartingLocation(Map map) {
         Locations[][] locations = map.getLocations();
@@ -419,8 +417,9 @@ public class MapControl {
         locations[9][9].moveItem(GameControl.Item.gold);
         return ;
     }
-    
+
     public enum SceneType {
+
         Mountain,
         Beach,
         Desert,
@@ -428,5 +427,16 @@ public class MapControl {
         Town,
         Blocked;
     }
-    
+
+    // if destination is not valid or blocked then do not move
+    public static void movePlayerToLocation(Player player, int row, int column) {
+        Map map = TheTown.getCurrentGame().getMap();
+        Locations[][] locations = map.getLocations();
+        if (row > 0 && row < map.getNumberOfRows()
+                && column > 0 && column < map.getNumberOfColumns()
+                && !locations[row][column].getRestrictedAccess()) {
+            player.setLocation(locations[row][column]);
+        }
+    }
+
 }

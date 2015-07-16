@@ -17,6 +17,15 @@ public class Player implements Serializable{
     
     //class instance variable
     private String name;
+    private Locations location;
+
+    public Locations getLocation() {
+        return location;
+    }
+
+    public void setLocation(Locations location) {
+        this.location = location;
+    }
 
     public Player() {
     }
