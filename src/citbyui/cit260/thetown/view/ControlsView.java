@@ -25,7 +25,7 @@ public class ControlsView extends View {
     public ControlsView() {
         super("\n"
                 + "\n=================================="
-                + "\n|           Controls              "
+                + "\n            Controls              "
                 + "\n=================================="
                 + "\nNorth - Moves a space north"
                 + "\nSouth - Moves a space south"

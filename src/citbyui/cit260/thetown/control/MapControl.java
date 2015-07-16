@@ -359,25 +359,40 @@ public class MapControl {
         scenes[SceneType.Town.ordinal()] = townScene;
 
         Scene mountainScene = new Scene();
-        mountainScene.setDescription("Welcome to the Mountain");
+        mountainScene.setDescription("Welcome to the Mountains: You look out "
+                + "\nand see a wide range of sagebrushin the forground against "
+                + "\ntall mointains. All the clouds seem to swirl around tallest"
+                + "\npeak. There's animals in the distance. you've never seen "
+                + "\nbefore. It's gonna be a long walk to those mountains. "
+                + "\nI wonder where that goldsmith is.");
         mountainScene.setMapSymbol(" ^ ");
         mountainScene.setResourceType("Shovel");
         scenes[SceneType.Mountain.ordinal()] = mountainScene;
 
         Scene beachScene = new Scene();
-        beachScene.setDescription("Welcome to the Beach");
+        beachScene.setDescription("Welcome to the Beach: Miles and miles of "
+                + "\nwhite sandy beach. Perfect waves crashing upon the shore "
+                + "\nline. Strange trees boarder the sand. The air is cooler "
+                + "\nover here. Why are people not here all the time?!");
         beachScene.setMapSymbol(" ~ ");
         beachScene.setResourceType("Snorkel");
         scenes[SceneType.Beach.ordinal()] = beachScene;
 
         Scene desertScene = new Scene();
-        desertScene.setDescription("Welcome to the Desert");
+        desertScene.setDescription("Welcome to the Desert: Dust roads lead "
+                + "\nevery which way. Small towns every few miles. Just cacti "
+                + "\nand broken handkarts inbetween. who would choose to "
+                + "\nlive here? I wonder where all these bandits are...");
         desertScene.setMapSymbol(" # ");
         desertScene.setResourceType("Badge");
         scenes[SceneType.Desert.ordinal()] = desertScene;
 
         Scene mistScene = new Scene();
-        mistScene.setDescription("Welcome to the Mist");
+        mistScene.setDescription("Welcome to the Mist: About a mile west of town"
+                + "\nyou can see the wall of mist. Birds only fly into it. None."
+                + "\ncome out. Ten feet into the mist you are completely lost. "
+                + "\nThere is a low, melodious hum in the air. Does it just keep "
+                + "\ngoing? All you can do is keep moving forward.");
         mistScene.setMapSymbol(" % ");
         mistScene.setResourceType("Cloak");
         scenes[SceneType.Mist.ordinal()] = mistScene;
@@ -401,7 +416,7 @@ public class MapControl {
         locations[5][8].addCharacter(Characters.Wayne);
         locations[7][8].addCharacter(Characters.Rachael);
         locations[6][12].addCharacter(Characters.Selina);
-        locations[7][7].addCharacter(Characters.Abraham);
+        locations[6][6].addCharacter(Characters.Abraham);
         locations[9][9].addCharacter(Characters.Alfred);
         locations[8][5].addCharacter(Characters.Gordon);
         return ;
@@ -460,6 +475,9 @@ public class MapControl {
         locations[1][8].setAmount(4);
         locations[0][5].setAmount(1);
         locations[0][9].setAmount(5);
+        // gold hidden in town
+        locations[8][7].setAmount(5);
+        locations[8][9].setAmount(5);
         return ;
     }
 
