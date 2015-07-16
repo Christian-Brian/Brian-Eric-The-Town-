@@ -119,23 +119,27 @@ public class ControlsView extends View {
         //this.console.println("Location: [" + row + "][" + newColumn + "]");
     }
 
-    public void displayInfo() {
+    public void displayInfo() { //Main controller
         Player player = TheTown.getPlayer();
         Locations location = player.getLocation();
         this.console.println("Location: [" + location.getRow() + "]["
                 + location.getColumn() + "]");
         this.console.println("Scene: " + location.getScene().getDescription());
+        
+         // Determines if location has gold, and if yes gets it for you
         if (location.getAmount() > 0) {
             double amount = location.getAmount();
             Resources[] inventory = TheTown.getCurrentGame().getInventory();
             switch (location.getScene().getResourceType()) {
                 case "":
                     ResourcesControl.addToInventory(amount, GameControl.Item.gold);
+                    location.removeAll();
                     this.console.println("You got " + amount + " gold.");
                     break;
                 case "Cloak":
                     if (inventory[Item.cloak.ordinal()].getAmount() > 0) {
                         ResourcesControl.addToInventory(amount, GameControl.Item.gold);
+                        location.removeAll();
                         this.console.println("You got " + amount + " gold.");
                     } else {
                         this.console.println("You need the cloak to get the gold.");
@@ -144,6 +148,7 @@ public class ControlsView extends View {
                 case "Shovel":
                     if (inventory[Item.shovel.ordinal()].getAmount() > 0) {
                         ResourcesControl.addToInventory(amount, GameControl.Item.gold);
+                        location.removeAll();
                         this.console.println("You got " + amount + " gold.");
                     } else {
                         this.console.println("You need the shovel to get the gold.");
@@ -152,6 +157,7 @@ public class ControlsView extends View {
                 case "Snorkel":
                     if (inventory[Item.snorkel.ordinal()].getAmount() > 0) {
                         ResourcesControl.addToInventory(amount, GameControl.Item.gold);
+                        location.removeAll();
                         this.console.println("You got " + amount + " gold.");
                     } else {
                         this.console.println("You need the snorkel to get the gold.");
@@ -160,12 +166,20 @@ public class ControlsView extends View {
                 case "Badge":
                     if (inventory[Item.badge.ordinal()].getAmount() > 0) {
                         ResourcesControl.addToInventory(amount, GameControl.Item.gold);
+                        location.removeAll();
                         this.console.println("You got " + amount + " gold.");
                     } else {
                         this.console.println("You need the badge to get the gold.");
                     }
                     break;
             }
+        }
+        
+        // If the location has an item get it!
+        if(location.hasItem()) {
+            ResourcesControl.addToInventory(1, location.getItem());
+            this.console.println("You got a " + location.getItem());
+            location.removeAll();//remove the ited and any gold after you visit it
         }
         displayNPCMessage(location);
     }

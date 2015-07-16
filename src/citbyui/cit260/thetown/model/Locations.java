@@ -22,6 +22,8 @@ public class Locations implements Serializable {
     private int column;
     private Scene scene;
     private ArrayList<Characters> characters;
+    
+    private GameControl.Item item = null;
 
     public Locations() {
         this.amount = 0.0;
@@ -67,7 +69,7 @@ public class Locations implements Serializable {
         return true;
     }
 
-    public double getAmount() {
+    public double getAmount() { // Sepecific to gold
         return amount;
     }
 
@@ -122,7 +124,23 @@ public class Locations implements Serializable {
         this.characters.add(character);
     }
 
+    public Boolean hasItem() {
+        if(item == null) {
+            return false;
+        }
+            return true;
+    }
+    
+    public GameControl.Item getItem() {
+        return this.item;
+    }
+    
     public void moveItem(GameControl.Item item) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.item = item;
+    }
+    
+    public void removeAll() {
+        this.item = null;
+        this.amount = 0;
     }
 }

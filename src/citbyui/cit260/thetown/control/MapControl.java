@@ -414,14 +414,52 @@ public class MapControl {
         locations[5][8].moveItem(GameControl.Item.badge);
         locations[7][8].moveItem(GameControl.Item.snorkel);
         locations[9][9].moveItem(GameControl.Item.cloak);
-        locations[9][9].moveItem(GameControl.Item.gold);
+//        locations[9][9].moveItem(GameControl.Item.gold);
         return ;
     }
     
     public static void setGoldInLocaion(Map map) {
         Locations[][] locations = map.getLocations();
-            //
-        locations[9][6].setAmount(GameControl.Item.gold);
+            //north "X" pattern for gold placement
+        locations[5][0].setAmount(5);
+        locations[9][0].setAmount(5);
+        locations[6][1].setAmount(3);
+        locations[8][1].setAmount(3);
+        locations[7][2].setAmount(3);
+        locations[6][3].setAmount(2);
+        locations[8][3].setAmount(2);
+        locations[5][4].setAmount(1);
+        locations[9][4].setAmount(1);
+        //East "X" pattern for gold placement
+        locations[10][3].setAmount(1);
+        locations[14][5].setAmount(5);
+        locations[11][6].setAmount(3);
+        locations[13][6].setAmount(4);
+        locations[12][7].setAmount(3);
+        locations[11][8].setAmount(2);
+        locations[13][8].setAmount(4);
+        locations[10][9].setAmount(1);
+        locations[14][9].setAmount(5);
+        //south "X" pattern for gold placement
+        locations[5][10].setAmount(1);
+        locations[9][10].setAmount(1);
+        locations[6][11].setAmount(2);
+        locations[8][11].setAmount(2);
+        locations[7][12].setAmount(3);
+        locations[6][13].setAmount(4);
+        locations[8][13].setAmount(4);
+        locations[5][14].setAmount(5);
+        locations[9][14].setAmount(5);
+        //west "X" pattern for gold placement
+        locations[4][5].setAmount(1);
+        locations[4][9].setAmount(1);
+        locations[3][6].setAmount(2);
+        locations[3][8].setAmount(2);
+        locations[2][7].setAmount(3);
+        locations[1][6].setAmount(4);
+        locations[1][8].setAmount(4);
+        locations[0][5].setAmount(1);
+        locations[0][9].setAmount(5);
         return ;
     }
 

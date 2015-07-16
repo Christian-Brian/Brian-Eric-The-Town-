@@ -49,6 +49,9 @@ public class GameControl {
         MapControl.moveCharactersToStartingLocation(map);
         
         MapControl.movePlayerToLocation(player, 7, 7);
+        
+        MapControl.moveItemsToStartingLocation(map);
+        MapControl.setGoldInLocaion(map);
     }
 
     public static Resources[] createInventoryList() {
