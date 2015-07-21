@@ -19,7 +19,7 @@ public enum Characters implements Serializable {
     Mark("Marks Message [9,6]: I heard you were looking to find treasure in these "
             + "\nmountains. I've searched for years and haven't got any richer."
             + "\nTake my shovel with you if you're gonna go look.Adam the "
-            + "\ngoldsmith walks out there every day. Hind him if you need help"),
+            + "\ngoldsmith walks out there every day. Find him if you need help"),
     Adam("Adams Message [8,2]: I found treasure. Finally! Help me open it and you can have half."),
     John("Johns Message [6,7]: If you think you're tough, try your hand east of town."
             + "\nIt's a good way to make money if you're good. Talk to Wayne about"
@@ -38,8 +38,8 @@ public enum Characters implements Serializable {
             + "\ntraveled west farther than you can travel in the desert. "
             + "\nI've been trying my whole life to clear the mist. Alfred and I "
             + "\nare going to take another trip. Maybe for good."),
-    Alfred("Alfreds Message [9,9]: Once we step into the mist i have no plans of "
-            + "\ncomming back to this town. We'll either break the mist or die out"
+    Alfred("Alfreds Message [9,9]: Once we step into the mist I have no plans of "
+            + "\ncoming back to this town. We'll either break the mist or die out"
             + "\nthere. Take this extra cloak if you decide to adventure west.)"),
     Gordon("Gordons Message [8,5]: There's not enough women in this town. Thats why "
             + "\nAbe and Alfred are leaving. To find more women. Whatever. Evens "

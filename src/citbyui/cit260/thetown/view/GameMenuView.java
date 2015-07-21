@@ -33,10 +33,6 @@ public class GameMenuView extends View {
                 + "\nInventory - Inventory"
                 + "\nHelp - Get help"
                 + "\nRestart - Restart game"
-                + "\nWater Tank - display word problem"
-                + "\nCase - Case"
-                + "\nCave - Cave"
-                + "\nReport- Report Character Locations"
                 + "\nQuit - Quit game"
                 + "\n==================================");
         restart = false;
@@ -113,18 +109,18 @@ public class GameMenuView extends View {
             case "restart": // restart game
                 this.restartGame();
                 return true;
-            case "water": // water
-                this.waterTank();
-                break;
-            case "case": // case
-                this.caseCubeofABox();
-                break;
-            case "cave": // cave
-                this.calcVolumeOfCave();
-                break;
-            case "report": // report
-                this.reportCharacters();
-                break;
+//            case "water": // water
+//                this.waterTank();
+//                break;
+//            case "case": // case
+//                this.caseCubeofABox();
+//                break;
+//            case "cave": // cave
+//                this.calcVolumeOfCave();
+//                break;
+//            case "report": // report
+//                this.reportCharacters();
+//                break;
             case "quit": //exit program
                 return true;
             default:

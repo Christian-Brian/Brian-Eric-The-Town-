@@ -32,7 +32,6 @@ public class TownsPeopleView extends View {
             + "\nfishing off the bridge. Alfred is swimming"
             + "\nwith a large group of people in the lake."
             + "\nGordon is tilling a garden."
-            + "\nWho - Who can i talk to?"
             + "\n==================================");
     
 //    public void displayMenu() {
@@ -110,9 +109,6 @@ public class TownsPeopleView extends View {
                 break;
             case "gordon": // display help menu
                 this.displayTownsPeople(Characters.Gordon);
-                break;
-            case "who": // display help menu
-                this.displayWho(selection);
                 break;
             case "quit": //exit program
                 return true;
